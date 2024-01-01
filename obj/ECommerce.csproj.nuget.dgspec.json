@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.NET\\Projects\\ECommerce\\ECommerce.csproj": {}
+    "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj": {}
   },
   "projects": {
-    "D:\\ASP.NET\\Projects\\ECommerce\\ECommerce.csproj": {
+    "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.NET\\Projects\\ECommerce\\ECommerce.csproj",
+        "projectUniqueName": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj",
         "projectName": "ECommerce",
-        "projectPath": "D:\\ASP.NET\\Projects\\ECommerce\\ECommerce.csproj",
+        "projectPath": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj",
         "packagesPath": "C:\\Users\\yashk\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.NET\\Projects\\ECommerce\\obj\\",
+        "outputPath": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yashk\\AppData\\Roaming\\NuGet\\NuGet.Config",

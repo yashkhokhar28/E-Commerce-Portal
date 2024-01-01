@@ -17,19 +17,21 @@ namespace ECommerce.Areas.Category.Controllers
             return View(dataTable);
         }
         #endregion
+
         #region Category Save
         public IActionResult CategorySave(CategoryModel categoryModel)
         {
             if (ModelState.IsValid)
             {
                 if (categoryDAL.CategorySave(categoryModel))
-                
+
                     return RedirectToAction("CategoryList");
-                
+
             }
-            return RedirectToAction("CategoryAddEdit");
+            return View("CategoryAddEdit");
         }
         #endregion
+
         #region Category By ID
         public IActionResult CategoryAdd(int CategoryID)
         {
@@ -44,7 +46,8 @@ namespace ECommerce.Areas.Category.Controllers
             }
         }
         #endregion
-        #region Category List
+
+        #region Category Delete
         public IActionResult CategoryDelete(int CategoryID)
         {
             bool isSuccess = categoryDAL.CategoryDelete(CategoryID);

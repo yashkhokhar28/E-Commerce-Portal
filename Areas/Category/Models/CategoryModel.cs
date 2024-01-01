@@ -15,4 +15,10 @@ namespace ECommerce.Areas.Category.Models
 
         public DateTime? Modified { get; set; }
     }
+
+    public class CategoryDropDownModel
+    {
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
+    }
 }

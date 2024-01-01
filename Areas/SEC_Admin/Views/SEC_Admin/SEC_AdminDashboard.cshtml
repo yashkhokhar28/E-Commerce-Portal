@@ -49,17 +49,20 @@
             @foreach (DataRow dataRow in Model.Rows)
             {
                 <div class="col-lg-3">
-                    <div class="card card-bordered mb-5">
-                        <div class="card-header">
-                            <h3 class="card-title">Products</h3>
+                    <a asp-area="Product" asp-controller="Product" asp-action="ProductList">
+                        <div class="card card-bordered mb-5">
+                            <div class="card-header">
+                                <h3 class="card-title">Products</h3>
+                            </div>
+                            <div class="card-body">
+                                @dataRow["ProductCount"]
+                            </div>
                         </div>
-                        <div class="card-body">
-                            @dataRow["ProductCount"]
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-3">
+
                     <div class="card  card-bordered mb-5">
                         <div class="card-header">
                             <h3 class="card-title">Active User</h3>
@@ -68,6 +71,7 @@
                             @dataRow["UserCount"]
                         </div>
                     </div>
+
                 </div>
 
 

@@ -9,95 +9,111 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ECommerce
 build_property.RootNamespace = ECommerce
-build_property.ProjectDir = D:\ASP.NET\Projects\ECommerce\
+build_property.ProjectDir = D:\ASP.NET\Projects\ECommerce\E-Commerce-Portal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\ASP.NET\Projects\ECommerce
+build_property.MSBuildProjectDirectory = D:\ASP.NET\Projects\ECommerce\E-Commerce-Portal
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/Category/Views/Category/CategoryAddEdit.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Category/Views/Category/CategoryAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/Category/Views/Category/CategoryList.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Category/Views/Category/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/Category/Views/Category/_ValidationScriptsPartial.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Category/Views/Category/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/Category/Views/_ViewImports.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Category/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_Admin/Views/SEC_Admin/SEC_AdminDashboard.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/ProductAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFByb2R1Y3RBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFByb2R1Y3RMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_Admin/Views/SEC_Admin/SEC_AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX0FkbWluXFZpZXdzXFNFQ19BZG1pblxTRUNfQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_Admin/Views/SEC_Admin/_ValidationScriptsPartial.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_Admin/Views/SEC_Admin/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX0FkbWluXFZpZXdzXFNFQ19BZG1pblxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_Admin/Views/_ViewImports.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX0FkbWluXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_User/Views/SEC_User/SEC_UserSignIn.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_User/Views/SEC_User/SEC_UserSignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcU0VDX1VzZXJcU0VDX1VzZXJTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_User/Views/SEC_User/SEC_UserSignUp.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_User/Views/SEC_User/SEC_UserSignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcU0VDX1VzZXJcU0VDX1VzZXJTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_User/Views/SEC_User/_ValidationScriptsPartial.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_User/Views/SEC_User/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcU0VDX1VzZXJcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Areas/SEC_User/Views/_ViewImports.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_User/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Home/Index.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Home/Privacy.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/Error.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/_Layout_Admin.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/_Layout_Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/_Layout_SignIn.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/_Layout_SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfU2lnbkluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/_Layout_SignUp.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/_Layout_SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/_ViewImports.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/_ViewStart.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP.NET/Projects/ECommerce/Views/Shared/_Layout.cshtml]
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yy7bhk8ry9

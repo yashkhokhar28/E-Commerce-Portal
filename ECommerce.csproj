@@ -14,8 +14,6 @@
   <ItemGroup>
     <Folder Include="Areas\Category\Data\" />
     <Folder Include="Areas\Product\Data\" />
-    <Folder Include="Areas\Product\Models\" />
-    <Folder Include="Areas\Product\Views\" />
     <Folder Include="Areas\SEC_Admin\Data\" />
     <Folder Include="Areas\SEC_Admin\Models\" />
     <Folder Include="Areas\SEC_User\Data\" />

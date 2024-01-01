@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j2J+1F9mhSeb9fx7CfwVaPPzEAA4uXqWeifGhheH2wiFIRAREMoIUwOLwkd3YaANROyeogRbBY8oyxv+kswJ/Q==",
+  "dgSpecHash": "hKRCK5Czngae7fXoKfBpGqs1K3H8FEpErg5EvX2sEIAhClYrIr0j25EMwwL9qUMM6rQ03fXr0LCrxxjh3Zb0rA==",
   "success": true,
-  "projectFilePath": "D:\\ASP.NET\\Projects\\ECommerce\\ECommerce.csproj",
+  "projectFilePath": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yashk\\.nuget\\packages\\enterpriselibrary.common.netcore\\6.3.0\\enterpriselibrary.common.netcore.6.3.0.nupkg.sha512",
     "C:\\Users\\yashk\\.nuget\\packages\\enterpriselibrary.data.netcore\\6.3.2\\enterpriselibrary.data.netcore.6.3.2.nupkg.sha512",
