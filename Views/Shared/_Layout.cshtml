@@ -45,15 +45,25 @@
                             <div class="site-top-icons">
                                 <ul>
                                     <li><label> @CommenVariable.FirstName()</label></li>
-                                    <li><a asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserSignIn"><span class="icon icon-person"></span></a></li>
+                                    <li>
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserSignIn"><span class="icon icon-person"></span></a>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                                                <a class="dropdown-item">My Profile</a>
+                                                <a class="dropdown-item" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                     <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                                     <li>
-                                        <a href="cart.html" class="site-cart">
+                                        <a class="site-cart">
                                             <span class="icon icon-shopping_cart"></span>
                                             <span class="count">2</span>
                                         </a>
                                     </li>
-                                    
+
                                     <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                                 </ul>
                             </div>

@@ -75,7 +75,7 @@ namespace ECommerce.Areas.SEC_User.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("SEC_UserSignIn");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Register(SEC_UserModel sEC_UserModel)
