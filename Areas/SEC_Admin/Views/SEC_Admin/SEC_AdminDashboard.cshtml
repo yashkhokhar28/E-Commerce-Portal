@@ -98,14 +98,16 @@
 
 
                 <div class="col-lg-3">
-                    <div class="card  card-bordered mb-5">
-                        <div class="card-header">
-                            <h3 class="card-title">Orders</h3>
+                    <a asp-area="Order" asp-controller="Order" asp-action="OrderList">
+                        <div class="card  card-bordered mb-5">
+                            <div class="card-header">
+                                <h3 class="card-title">Orders</h3>
+                            </div>
+                            <div class="card-body">
+                                @dataRow["OrderCount"]
+                            </div>
                         </div>
-                        <div class="card-body">
-                            @dataRow["OrderCount"]
-                        </div>
-                    </div>
+                    </a>
                 </div>
             }
         </div>

@@ -77,7 +77,7 @@
                             <!--begin::Input group=-->
                             <div class="fv-row mb-8">
                                 <!--begin::Email-->
-                                <input type="text" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" required />
+                                <input type="password" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" required />
                                 <div class="text-danger">@Html.Raw(TempData["PasswordError"]) </div>
                                 <!--end::Email-->
                             </div>
