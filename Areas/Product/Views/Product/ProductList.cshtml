@@ -83,18 +83,16 @@
                                         </div>
                                     </th>
                                     <th class="min-w-200px">Product</th>
-                                    <th class="text-end min-w-100px">Price</th>
-                                    <th class="text-end min-w-70px">Code</th>
-                                    <th class="text-end min-w-100px">CategoryName</th>
-                                    <th class="text-end min-w-100px">Discount</th>
-                                    <th class="text-end min-w-100px">Rating</th>
+                                    <th class="text-center min-w-100px">Price</th>
+                                    <th class="text-center min-w-70px">Code</th>
+                                    <th class="text-center min-w-100px">Category</th>
+                                    <th class="text-center min-w-100px">Rating</th>
                                     <th class="text-center min-w-70px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
                                 @foreach (DataRow dataRow in Model.Rows)
                                 {
-                                    Console.WriteLine(@dataRow["DisplayImage"]);
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -117,20 +115,20 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-end pe-0">
+                                        <td class="text-center pe-0">
                                             <span class="fw-bold">@dataRow["Price"]</span>
                                         </td>
-                                        <td class="text-end pe-0" data-order="37">
+                                        <td class="text-center pe-0" data-order="37">
                                             <span class="fw-bold ms-3">@dataRow["Code"]</span>
                                         </td>
-                                        <td class="text-end pe-0">@dataRow["Discount"]</td>
-                                        <td class="text-end pe-0" data-order="rating-4">
-                                            @dataRow["Rating"]
-                                        </td>
-                                        <td class="text-end pe-0" data-order="Published">
+
+                                        <td class="text-center pe-0" data-order="Published">
                                             <!--begin::Badges-->
                                             <div class="badge badge-light-success">@dataRow["CategoryName"]</div>
                                             <!--end::Badges-->
+                                        </td>
+                                        <td class="text-center pe-0" data-order="rating-4">
+                                            @dataRow["Rating"]
                                         </td>
                                         <td class="text-center">
                                             <form method="post" asp-area="Product" asp-controller="Product" asp-action="ProductDelete">

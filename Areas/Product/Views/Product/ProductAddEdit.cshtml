@@ -105,9 +105,12 @@
                                             <!-- Render Existing Image -->
                                             @if (!string.IsNullOrEmpty(Model.DisplayImage))
                                             {
-                                                <div class="mb-10 fv-row card hover-elevate-up shadow-sm parent-hover symbol symbol-50px">
-                                                    <label class="form-label ">Existing Product Image</label>
-                                                    <img src="@Url.Content(Model.DisplayImage)" alt="Product Image" class="img-fluid" />
+                                                <div class="col-lg-2">
+                                                    <div class="card hover-elevate-up shadow-sm parent-hover mb-5">
+                                                        <div class="card-header">
+                                                            <img src="@Url.Content(Model.DisplayImage)" alt="Product Image" class="img-fluid" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="mb-10 fv-row">
                                                     <label class="required form-label">Product Image</label>
@@ -116,6 +119,7 @@
                                                     <span asp-validation-for="DisplayImage" class="text-danger"></span>
                                                 </div>
                                             }
+                                            
 
                                             <!-- Image Upload for Edit -->
                                             @if (string.IsNullOrEmpty(Model.DisplayImage))

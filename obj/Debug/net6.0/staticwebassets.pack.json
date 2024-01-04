@@ -5,6 +5,46 @@
       "PackagePath": "staticwebassets\\ECommerce.bundle.scp.css"
     },
     {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\1.png",
+      "PackagePath": "staticwebassets\\Upload\\1.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\10.png",
+      "PackagePath": "staticwebassets\\Upload\\10.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\16.png",
+      "PackagePath": "staticwebassets\\Upload\\16.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\162.png",
+      "PackagePath": "staticwebassets\\Upload\\162.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\2.png",
+      "PackagePath": "staticwebassets\\Upload\\2.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\3.png",
+      "PackagePath": "staticwebassets\\Upload\\3.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\34.png",
+      "PackagePath": "staticwebassets\\Upload\\34.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\4.png",
+      "PackagePath": "staticwebassets\\Upload\\4.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\65.png",
+      "PackagePath": "staticwebassets\\Upload\\65.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\85.png",
+      "PackagePath": "staticwebassets\\Upload\\85.png"
+    },
+    {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\Screenshot (139).png",
       "PackagePath": "staticwebassets\\Upload\\Screenshot (139).png"
     },
@@ -1679,6 +1719,10 @@
     {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\media\\avatars\\blank.png",
       "PackagePath": "staticwebassets\\media\\avatars\\blank.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\media\\avatars\\dhoni.jpeg",
+      "PackagePath": "staticwebassets\\media\\avatars\\dhoni.jpeg"
     },
     {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\media\\books\\1.png",

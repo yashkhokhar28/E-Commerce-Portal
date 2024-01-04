@@ -4,6 +4,7 @@
 }
 
 @using System.Data
+@using ECommerce.BAL
 @model DataTable
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -32,10 +33,17 @@
                     <!--begin::Actions-->
                     <div class="d-flex align-items-center gap-2 gap-lg-3">
                         <!--begin::Secondary button-->
-                        <a class="btn btn-sm fw-bold btn-secondary">Manage Sales</a>
+                        <div class="symbol symbol-50px">
+                            <img src="~/media/avatars/dhoni.jpeg" alt="" />
+                        </div>
                         <!--end::Secondary button-->
                         <!--begin::Primary button-->
-                        <a class="btn btn-sm fw-bold btn-primary">Add Product</a>
+                        <ul>
+                            <li>
+                                <label> @CommenVariable.FirstName()</label>
+                                <a asp-area="SEC_User" asp-controller="SEC_User" asp-action="Logout" class="btn btn-light-danger">Logout</a>
+                            </li>
+                        </ul>
                         <!--end::Primary button-->
                     </div>
                     <!--end::Actions-->

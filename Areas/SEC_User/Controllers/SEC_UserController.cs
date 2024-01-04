@@ -62,6 +62,7 @@ namespace ECommerce.Areas.SEC_User.Controllers
                 }
                 if (HttpContext.Session.GetString("UserName") != null && HttpContext.Session.GetString("Password") != null && HttpContext.Session.GetString("UserName") == "Thala")
                 {
+                    Console.WriteLine(HttpContext.Session.GetString("UserName"));
                     return RedirectToAction("SEC_AdminDashboard", "SEC_Admin", new { area = "SEC_Admin" });
                 }
                 else if (HttpContext.Session.GetString("UserName") != null && HttpContext.Session.GetString("Password") != null)
