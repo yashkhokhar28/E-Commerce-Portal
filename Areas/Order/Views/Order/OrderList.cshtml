@@ -119,7 +119,7 @@
                                             <span class="fw-bold">@dataRow["Modified"]</span>
                                         </td>
                                         <td class="text-center">
-                                            <form>
+                                            <form method="post" asp-area="Order" asp-controller="Order" asp-action="OrderSelectByPK" asp-route-orderid="@Convert.ToInt32(dataRow["OrderID"])">
                                                 <button type="submit" class="btn btn-secondary btn-xs">
                                                     View
                                                 </button>

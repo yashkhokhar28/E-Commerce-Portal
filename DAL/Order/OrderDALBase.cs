@@ -26,5 +26,27 @@ namespace ECommerce.DAL.Order
             }
         }
         #endregion
+
+        #region Method : Order SelectByPK
+        public DataTable OrderSelectByPK(int OrderID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Order_SelectAllByPK");
+                sqlDatabase.AddInParameter(dbCommand, "@OrderID", DbType.Int32, OrderID);
+                DataTable dataTable = new DataTable();
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                {
+                    dataTable.Load(dataReader);
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }

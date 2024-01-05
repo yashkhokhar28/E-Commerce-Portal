@@ -16,5 +16,13 @@ namespace ECommerce.Areas.Order.Controllers
             return View(dataTable);
         }
         #endregion
+
+        #region Order SelectByPK
+        public IActionResult OrderSelectByPK(int OrderID)
+        {
+            DataTable dataTable = orderDAL.OrderSelectByPK(OrderID);
+            return View("SingleOrder", dataTable);
+        }
+        #endregion
     }
 }
