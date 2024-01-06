@@ -58,11 +58,11 @@
             {
                 <div class="col-lg-3">
                     <a asp-area="Product" asp-controller="Product" asp-action="ProductList">
-                        <div class="card card-bordered mb-5">
+                        <div class="card card-bordered mb-5 shadow-sm">
                             <div class="card-header">
-                                <h3 class="card-title">Products</h3>
+                                <h3 class="card-title fs-2hx fw-bold text-gray-900">Products</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body fs-4 fw-semibold text-gray-500">
                                 @dataRow["ProductCount"]
                             </div>
                         </div>
@@ -70,26 +70,26 @@
                 </div>
 
                 <div class="col-lg-3">
-
-                    <div class="card  card-bordered mb-5">
-                        <div class="card-header">
-                            <h3 class="card-title">Active User</h3>
+                    <a asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserList">
+                        <div class="card  card-bordered mb-5 shadow-sm">
+                            <div class="card-header">
+                                <h3 class="card-title fs-2hx fw-bold text-gray-900">Active User</h3>
+                            </div>
+                            <div class="card-body fs-4 fw-semibold text-gray-500">
+                                @dataRow["UserCount"]
+                            </div>
                         </div>
-                        <div class="card-body">
-                            @dataRow["UserCount"]
-                        </div>
-                    </div>
-
+                    </a>
                 </div>
 
 
                 <div class="col-lg-3">
                     <a asp-area="Category" asp-controller="Category" asp-action="CategoryList">
-                        <div class="card card-bordered mb-5">
+                        <div class="card card-bordered mb-5 shadow-sm">
                             <div class="card-header">
-                                <h3 class="card-title">Categories</h3>
+                                <h3 class="card-title fs-2hx fw-bold text-gray-900">Categories</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body fs-4 fw-semibold text-gray-500">
                                 @dataRow["CategoryCount"]
                             </div>
                         </div>
@@ -99,11 +99,11 @@
 
                 <div class="col-lg-3">
                     <a asp-area="Order" asp-controller="Order" asp-action="OrderList">
-                        <div class="card  card-bordered mb-5">
+                        <div class="card  card-bordered mb-5 shadow-sm">
                             <div class="card-header">
-                                <h3 class="card-title">Orders</h3>
+                                <h3 class="card-title fs-2hx fw-bold text-gray-900">Orders</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body fs-4 fw-semibold text-gray-500">
                                 @dataRow["OrderCount"]
                             </div>
                         </div>

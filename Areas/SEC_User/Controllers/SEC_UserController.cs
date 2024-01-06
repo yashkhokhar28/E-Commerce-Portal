@@ -9,16 +9,22 @@ namespace ECommerce.Areas.SEC_User.Controllers
     [Route("SEC_User/[controller]/[action]")]
     public class SEC_UserController : Controller
     {
+        SEC_UserDAL sEC_UserDAL = new SEC_UserDAL();
+        #region SEC_UserSignIn
         public IActionResult SEC_UserSignIn()
         {
             return View();
         }
+        #endregion
 
+        #region SEC_UserSignUp
         public IActionResult SEC_UserSignUp()
         {
             return View();
         }
+        #endregion
 
+        #region Login
         [HttpPost]
         public IActionResult Login(SEC_UserModel sEC_UserModel)
         {
@@ -37,8 +43,6 @@ namespace ECommerce.Areas.SEC_User.Controllers
             }
             else
             {
-
-                SEC_UserDAL sEC_UserDAL = new SEC_UserDAL();
                 DataTable dataTable = sEC_UserDAL.SEC_User_SelectByUserNamePassword(sEC_UserModel.UserName, sEC_UserModel.Password);
                 if (dataTable.Rows.Count > 0)
                 {
@@ -60,7 +64,7 @@ namespace ECommerce.Areas.SEC_User.Controllers
                     TempData["Error"] = "UserName or Password is invalid!";
                     return RedirectToAction("SEC_UserSignIn");
                 }
-                if (HttpContext.Session.GetString("UserName") != null && HttpContext.Session.GetString("Password") != null && HttpContext.Session.GetString("UserName") == "Thala")
+                if (HttpContext.Session.GetString("UserName") != null && HttpContext.Session.GetString("Password") != null && HttpContext.Session.GetString("isAdmin") == "True")
                 {
                     Console.WriteLine(HttpContext.Session.GetString("UserName"));
                     return RedirectToAction("SEC_AdminDashboard", "SEC_Admin", new { area = "SEC_Admin" });
@@ -72,13 +76,17 @@ namespace ECommerce.Areas.SEC_User.Controllers
             }
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region Logout
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
+        #endregion
 
+        #region Register
         public IActionResult Register(SEC_UserModel sEC_UserModel)
         {
 
@@ -109,8 +117,7 @@ namespace ECommerce.Areas.SEC_User.Controllers
             }
             else
             {
-                SEC_UserDAL sEC_UserDAL = new SEC_UserDAL();
-                bool IsSuccess = sEC_UserDAL.PR_SEC_User_Register(sEC_UserModel.UserName, sEC_UserModel.Password, sEC_UserModel.FirstName, sEC_UserModel.LastName, sEC_UserModel.EmailAddress);
+                bool IsSuccess = sEC_UserDAL.SEC_User_Register(sEC_UserModel.UserName, sEC_UserModel.Password, sEC_UserModel.FirstName, sEC_UserModel.LastName, sEC_UserModel.EmailAddress);
                 if (IsSuccess)
                 {
                     return RedirectToAction("SEC_UserSignIn");
@@ -120,7 +127,23 @@ namespace ECommerce.Areas.SEC_User.Controllers
                     return RedirectToAction("SEC_UserSignUp");
                 }
             }
-
         }
+        #endregion
+
+        #region User SelectALL
+        public IActionResult SEC_UserList()
+        {
+            DataTable dataTable = sEC_UserDAL.SEC_User_SelectALL();
+            return View("UserList", dataTable);
+        }
+        #endregion
+
+        #region User SelectByPK
+        public IActionResult SEC_User_SelectByPK(int UserID)
+        {
+            DataTable dataTable = sEC_UserDAL.SEC_User_SelectByPK(UserID);
+            return View("SingleUser", dataTable);
+        }
+        #endregion
     }
 }
