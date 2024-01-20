@@ -22,5 +22,10 @@
         {
             return _HttpContextAccessor.HttpContext.Session.GetString("FirstName");
         }
-    }
+
+		public static string Email()
+		{
+			return _HttpContextAccessor.HttpContext.Session.GetString("EmailAddress");
+		}
+	}
 }
