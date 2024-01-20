@@ -12,7 +12,6 @@ namespace ECommerce.Areas.SEC_User.Models
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
-        [DataType(DataType.Password)]
         [DisplayName("Password")]
         public string Password { get; set; }
 

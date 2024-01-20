@@ -14,7 +14,7 @@
     <!--begin::Page bg image-->
     <style>
         body {
-            background-image: url('~/media/auth/bg10.jpeg');
+            background-image: url('~/assets2/media/auth/bg10.jpeg');
         }</style>
     <!--end::Page bg image-->
     <!--begin::Authentication - Sign-up -->
@@ -24,8 +24,8 @@
             <!--begin::Content-->
             <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
                 <!--begin::Image-->
-                <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="~/media/auth/agency.png" alt="" />
-                <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="~/media/auth/agency-dark.png" alt="" />
+                <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="~/assets2/media/auth/agency.png" alt="" />
+                <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="~/assets2/media/auth/agency-dark.png" alt="" />
                 <!--end::Image-->
                 <!--begin::Title-->
                 <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Fast, Efficient and Productive</h1>
@@ -52,7 +52,7 @@
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
                         <!--begin::Form-->
-                        <form class="form w-100" id="kt_sign_up_form" data-kt-redirect-url="authentication/layouts/overlay/sign-in.html" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Register">
+                        <form class="form w-100" data-kt-redirect-url="authentication/layouts/overlay/sign-in.html" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Register">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!--begin::Heading-->
                             <div class="text-center mb-11">
@@ -152,8 +152,3 @@
     <!--end::Authentication - Sign-up-->
 </div>
 <!--end::Root-->
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
