@@ -69,14 +69,14 @@
                                 <!--begin::Input group=-->
                                 <div class="fv-row mb-8">
                                     <!--begin::Email-->
-                                    <input type="text" placeholder="User Name" autocomplete="off" asp-for="UserName" class="form-control bg-transparent" required />
+                                    <input type="text" placeholder="User Name" autocomplete="off" asp-for="UserName" class="form-control bg-transparent" />
                                     <lable><div class="text-danger">@Html.Raw(TempData["UserNameError"]) </div></lable>
                                     <!--end::Email-->
                                 </div>
                                 <!--end::Input group=-->
                                 <div class="fv-row mb-3">
                                     <!--begin::Password-->
-                                    <input type="password" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" required />
+                                    <input type="password" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" />
                                     <div class="text-danger">@Html.Raw(TempData["PasswordError"]) </div>
                                     <!--end::Password-->
                                 </div>
