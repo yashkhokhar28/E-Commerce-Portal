@@ -5,7 +5,7 @@
 <!--begin::Head-->
 <head>
     <base href="~/assets2/../" />
-    <title>Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes</title>
+    <title>@ViewData["Title"]</title>
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -225,7 +225,7 @@
                     <!--begin::Logo-->
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
-                        <a href="index.html">
+                        <a asp-area="SEC_Admin" asp-controller="SEC_Admin" asp-action="SEC_AdminDashboard">
                             <img alt="Logo" src="~/assets2/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
                             <img alt="Logo" src="~/assets2/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
                         </a>
@@ -261,7 +261,7 @@
                                                     <span class="path4"></span>
                                                 </i>
                                             </span>
-                                            <span class="menu-title">Dashboards</span>
+                                            <span class="menu-title">Products</span>
                                             <span class="menu-arrow"></span>
                                         </span>
                                         <!--end:Menu link-->
@@ -270,11 +270,193 @@
                                             <!--begin:Menu item-->
                                             <div class="menu-item">
                                                 <!--begin:Menu link-->
-                                                <a class="menu-link" href="index.html">
+                                                <a class="menu-link" asp-area="Product" asp-controller="Product" asp-action="ProductList">
                                                     <span class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span>
                                                     </span>
-                                                    <span class="menu-title">Default</span>
+                                                    <span class="menu-title">Product List</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Deleted Product</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" asp-area="Product" asp-controller="Product" asp-action="ProductAdd">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Add Product</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                    </div>
+                                    <!--end:Menu item-->
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link-->
+                                        <span class="menu-link">
+                                            <span class="menu-icon">
+                                                <i class="ki-duotone ki-element-11 fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">Category</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <!--end:Menu link-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" asp-area="Category" asp-controller="Category" asp-action="CategoryList">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Category List</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Deleted Category</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" asp-area="Category" asp-controller="Category" asp-action="CategoryAdd">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Add Category</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                    </div>
+                                    <!--end:Menu item-->
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link-->
+                                        <span class="menu-link">
+                                            <span class="menu-icon">
+                                                <i class="ki-duotone ki-element-11 fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">User</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <!--end:Menu link-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserList">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Active User</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">In Active User</span>
+                                                </a>
+                                                <!--end:Menu link-->
+                                            </div>
+                                            <!--end:Menu item-->
+                                        </div>
+                                        <!--end:Menu sub-->
+                                    </div>
+                                    <!--end:Menu item-->
+                                    <!--begin:Menu item-->
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link-->
+                                        <span class="menu-link">
+                                            <span class="menu-icon">
+                                                <i class="ki-duotone ki-element-11 fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">Orders</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <!--end:Menu link-->
+                                        <!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <!--begin:Menu item-->
+                                            <div class="menu-item">
+                                                <!--begin:Menu link-->
+                                                <a class="menu-link" asp-area="Order" asp-controller="Order" asp-action="OrderList">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Order List</span>
                                                 </a>
                                                 <!--end:Menu link-->
                                             </div>
@@ -287,10 +469,13 @@
                                 <!--end::Menu-->
                             </div>
                             <!--end::Scroll wrapper-->
+
                         </div>
                         <!--end::Menu wrapper-->
+
                     </div>
                     <!--end::sidebar menu-->
+
                 </div>
                 <!--end::Sidebar-->
             </div>
