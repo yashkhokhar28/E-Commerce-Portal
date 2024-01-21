@@ -132,3 +132,42 @@ UPDATE [dbo].[MST_Product]
 SET [isActive] = 0	
 	
 WHERE [dbo].[MST_Product].[ProductID] = @ProductID
+
+
+--Product Retrive
+CREATE PROCEDURE [dbo].[Product_Retrive]
+@ProductID	int
+
+AS
+UPDATE [dbo].[MST_Product]
+
+SET [isActive] = 1	
+	
+WHERE [dbo].[MST_Product].[ProductID] = @ProductID
+
+
+-- Product Deleted Product
+CREATE PROCEDURE [dbo].[Product_Deleted]
+AS
+
+SELECT	[dbo].[MST_Product].[ProductID], 
+		[dbo].[MST_Product].[ProductName], 
+		[dbo].[MST_Product].[Discription], 
+		[dbo].[MST_Product].[Price],
+		[dbo].[MST_Product].[Code],
+		[dbo].[MST_Product].[DisplayImage],
+		[dbo].[MST_Product].[isActive],
+		[dbo].[MST_Product].[Discount],
+		[dbo].[MST_Product].[Rating],
+		[dbo].[MST_Product].[Created],
+		[dbo].[MST_Product].[Modified],
+		[dbo].[Category].[CategoryID],
+		[dbo].[Category].[CategoryName]
+
+FROM [dbo].[MST_Product] 
+INNER JOIN [dbo].[Category]
+ON [dbo].[MST_Product].[CategoryID] = [dbo].[Category].[CategoryID]
+
+Where [dbo].[MST_Product].[isActive] = 0
+
+ORDER BY [dbo].[MST_Product].[ProductName]

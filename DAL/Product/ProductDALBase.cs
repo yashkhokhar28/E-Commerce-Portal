@@ -9,13 +9,34 @@ namespace ECommerce.DAL.Product
 {
     public class ProductDALBase : DALHelper
     {
-        #region Method : Product SelectAll
+        #region Method : Product SelectAll (Active)
         public DataTable ProductSelectAll()
         {
             try
             {
                 SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_SelectAll");
+                DataTable dataTable = new DataTable();
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                {
+                    dataTable.Load(dataReader);
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
+
+        #region Method : Product SelectAll (In Active)
+        public DataTable ProductDeletedSelectAll()
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_Deleted");
                 DataTable dataTable = new DataTable();
                 using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
                 {
@@ -157,6 +178,24 @@ namespace ECommerce.DAL.Product
             {
                 SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_Delete");
+                sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
+                bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Method : Product Retrive
+        public bool ProductRetrive(int ProductID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_Retrive");
                 sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
                 bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
                 return isSuccess;

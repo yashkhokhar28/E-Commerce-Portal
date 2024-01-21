@@ -10,10 +10,19 @@ namespace ECommerce.Areas.Product.Controllers
     public class ProductController : Controller
     {
         ProductDAL productDAL = new ProductDAL();
-        #region Product List
+
+        #region Product List (Active)
         public IActionResult ProductList()
         {
             DataTable dataTable = productDAL.ProductSelectAll();
+            return View(dataTable);
+        }
+        #endregion
+
+        #region Product List (In Active)
+        public IActionResult DeletedProductList()
+        {
+            DataTable dataTable = productDAL.ProductDeletedSelectAll();
             return View(dataTable);
         }
         #endregion
@@ -57,6 +66,18 @@ namespace ECommerce.Areas.Product.Controllers
                 return RedirectToAction("ProductList");
             }
             return RedirectToAction("ProductList");
+        }
+        #endregion
+
+        #region Product Retrive
+        public IActionResult ProductRetrive(int ProductID)
+        {
+            bool isSuccess = productDAL.ProductRetrive(ProductID);
+            if (isSuccess)
+            {
+                return RedirectToAction("DeletedProductList");
+            }
+            return RedirectToAction("DeletedProductList");
         }
         #endregion
     }
