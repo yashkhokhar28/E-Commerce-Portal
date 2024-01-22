@@ -75,6 +75,166 @@
                                                     <div class="card-body pt-0">
                                                         <!--begin::Input group-->
                                                         <div class="mb-10 fv-row">
+                                                            <!--begin::Thumbnail settings-->
+                                                            <div class="card card-flush py-4">
+                                                                <!--begin::Card header-->
+                                                                <div class="card-header">
+                                                                    <!--begin::Card title-->
+                                                                    <div class="card-title">
+                                                                        <h2>Product Image</h2>
+                                                                    </div>
+                                                                    <!--end::Card title-->
+                                                                </div>
+                                                                <!--end::Card header-->
+                                                                <!--begin::Card body-->
+                                                                <div class="card-body text-center pt-0">
+                                                                    <!-- Check if there is an existing image (File is not null) -->
+                                                                    @if (!string.IsNullOrEmpty(Model.DisplayImage))
+                                                                    {
+
+                                                                        <div class="d-flex align-items-center justify-content-center">
+                                                                            <!-- Existing Image Box -->
+                                                                            <div class="image-input-wrapper w-150px h-150px me-3">
+                                                                                <!-- Display existing image here -->
+                                                                                <img src="@Url.Content(Model.DisplayImage)" alt="Existing Image" class="w-100 h-100 object-fit-cover" />
+                                                                            </div>
+
+                                                                            <!--begin::Image input-->
+                                                                            <!--begin::Image input placeholder-->
+                                                                            <style>
+                                                                                .image-input-placeholder {
+                                                                                    background-image: url('@Url.Content("~/assets2/media/svg/files/blank-image.svg")');
+                                                                                }
+
+                                                                                [data-bs-theme="dark"] .image-input-placeholder {
+                                                                                    background-image: url('@Url.Content("~/assets/media/svg/files/blank-image-dark.svg")');
+                                                                                }
+                                                                            </style>
+                                                                            <!--end::Image input placeholder-->
+                                                                            <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                                                                 data-kt-image-input="true">
+                                                                                <!--begin::Preview existing avatar-->
+                                                                                <div class="image-input-wrapper w-150px h-150px"></div>
+                                                                                <!--end::Preview existing avatar-->
+                                                                                <!--begin::Label-->
+                                                                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                       data-kt-image-input-action="change"
+                                                                                       data-bs-toggle="tooltip"
+                                                                                       title="Change avatar">
+                                                                                    <i class="ki-duotone ki-pencil fs-7">
+                                                                                        <span class="path1"></span>
+                                                                                        <span class="path2"></span>
+                                                                                    </i>
+                                                                                    <!--begin::Inputs-->
+                                                                                    <input type="file"
+                                                                                           name="File"
+                                                                                           accept=".png, .jpg, .jpeg" asp-for="File" />
+                                                                                    <input type="hidden" name="avatar_remove" />
+                                                                                    <!--end::Inputs-->
+                                                                                </label>
+                                                                                <!--end::Label-->
+                                                                                <!--begin::Cancel-->
+                                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                      data-kt-image-input-action="cancel"
+                                                                                      data-bs-toggle="tooltip"
+                                                                                      title="Cancel avatar">
+                                                                                    <i class="ki-duotone ki-cross fs-2">
+                                                                                        <span class="path1"></span>
+                                                                                        <span class="path2"></span>
+                                                                                    </i>
+                                                                                </span>
+                                                                                <!--end::Cancel-->
+                                                                                <!--begin::Remove-->
+                                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                      data-kt-image-input-action="remove"
+                                                                                      data-bs-toggle="tooltip"
+                                                                                      title="Remove avatar">
+                                                                                    <i class="ki-duotone ki-cross fs-2">
+                                                                                        <span class="path1"></span>
+                                                                                        <span class="path2"></span>
+                                                                                    </i>
+                                                                                </span>
+                                                                                <!--end::Remove-->
+                                                                            </div>
+                                                                            <!--end::Image input-->
+                                                                        </div>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <!-- Render image input for uploading a new image -->
+                                                                        <!--begin::Image input-->
+                                                                        <!--begin::Image input placeholder-->
+                                                                        <style>
+                                                                            .image-input-placeholder {
+                                                                                background-image: url('@Url.Content("~/assets2/media/svg/files/blank-image.svg")');
+                                                                            }
+
+                                                                            [data-bs-theme="dark"] .image-input-placeholder {
+                                                                                background-image: url('@Url.Content("~/assets/media/svg/files/blank-image-dark.svg")');
+                                                                            }
+                                                                        </style>
+                                                                        <!--end::Image input placeholder-->
+                                                                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                                                             data-kt-image-input="true">
+                                                                            <!--begin::Preview existing avatar-->
+                                                                            <div class="image-input-wrapper w-150px h-150px"></div>
+                                                                            <!--end::Preview existing avatar-->
+                                                                            <!--begin::Label-->
+                                                                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                   data-kt-image-input-action="change"
+                                                                                   data-bs-toggle="tooltip"
+                                                                                   title="Change avatar">
+                                                                                <i class="ki-duotone ki-pencil fs-7">
+                                                                                    <span class="path1"></span>
+                                                                                    <span class="path2"></span>
+                                                                                </i>
+                                                                                <!--begin::Inputs-->
+                                                                                <input type="file"
+                                                                                       name="File"
+                                                                                       accept=".png, .jpg, .jpeg" asp-for="File" />
+                                                                                <input type="hidden" name="avatar_remove" />
+                                                                                <!--end::Inputs-->
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <!--begin::Cancel-->
+                                                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                  data-kt-image-input-action="cancel"
+                                                                                  data-bs-toggle="tooltip"
+                                                                                  title="Cancel avatar">
+                                                                                <i class="ki-duotone ki-cross fs-2">
+                                                                                    <span class="path1"></span>
+                                                                                    <span class="path2"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                            <!--end::Cancel-->
+                                                                            <!--begin::Remove-->
+                                                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                                  data-kt-image-input-action="remove"
+                                                                                  data-bs-toggle="tooltip"
+                                                                                  title="Remove avatar">
+                                                                                <i class="ki-duotone ki-cross fs-2">
+                                                                                    <span class="path1"></span>
+                                                                                    <span class="path2"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                            <!--end::Remove-->
+                                                                        </div>
+                                                                        <!--end::Image input-->
+                                                                        <!--begin::Description-->
+                                                                        <div class="text-muted fs-7">
+                                                                            Set the product thumbnail image. Only *.png, *.jpg
+                                                                            and *.jpeg image files are accepted
+                                                                        </div>
+                                                                        <!--end::Description-->
+                                                                    }
+                                                                </div>
+                                                                <!--end::Card body-->
+                                                            </div>
+                                                            <!--end::Thumbnail settings-->
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <!--begin::Input group-->
+                                                        <div class="mb-10 fv-row">
                                                             <!--begin::Label-->
                                                             <label class="required form-label">Product Name</label>
                                                             <!--end::Label-->
@@ -108,37 +268,6 @@
                                                             <!--end::Description-->
                                                         </div>
                                                         <!--end::Input group-->
-                                                        <!--begin::Thumbnail-->
-                                                        <!-- Render Existing Image -->
-                                                        @if (!string.IsNullOrEmpty(Model.DisplayImage))
-                                                        {
-                                                            <div class="col-lg-2">
-                                                                <div class="card hover-elevate-up shadow-sm parent-hover mb-5">
-                                                                    <div class="card-header">
-                                                                        <img src="@Url.Content(Model.DisplayImage)" alt="Product Image" class="img-fluid" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mb-10 fv-row">
-                                                                <label class="required form-label">Product Image</label>
-                                                                <input type="file" name="File" class="form-control mb-2" accept=".png, .jpg, .jpeg" asp-for="File" />
-                                                                <div class="text-muted fs-7">Set a Photo to the product for better visibility.</div>
-                                                                <span asp-validation-for="DisplayImage" class="text-danger"></span>
-                                                            </div>
-                                                        }
-
-
-                                                        <!-- Image Upload for Edit -->
-                                                        @if (string.IsNullOrEmpty(Model.DisplayImage))
-                                                        {
-                                                            <div class="mb-10 fv-row">
-                                                                <label class="required form-label">Product Image</label>
-                                                                <input type="file" name="File" class="form-control mb-2" accept=".png, .jpg, .jpeg" asp-for="File" />
-                                                                <div class="text-muted fs-7">Set a Photo to the product for better visibility.</div>
-                                                                <span asp-validation-for="DisplayImage" class="text-danger"></span>
-                                                            </div>
-                                                        }
-                                                        <!--end::Thumbnail-->
                                                         <!--begin::Input group-->
                                                         <div class="mb-10 fv-row">
                                                             <!--begin::Label-->
