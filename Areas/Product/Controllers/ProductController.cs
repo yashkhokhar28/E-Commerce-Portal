@@ -27,6 +27,14 @@ namespace ECommerce.Areas.Product.Controllers
         }
         #endregion
 
+        #region Product List (User Side)
+        public IActionResult ShoppingProductList()
+        {
+            DataTable dataTable = productDAL.ProductSelectAll();
+            return View(dataTable);
+        }
+        #endregion
+
         #region Product Save
         public IActionResult ProductSave(ProductModel productModel)
         {

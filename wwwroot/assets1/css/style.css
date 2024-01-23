@@ -2,7 +2,7 @@
 body {
   line-height: 1.7;
   color: #8c92a0;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px; }
 
 ::-moz-selection {
@@ -69,7 +69,7 @@ a {
     padding: 10px 20px !important; }
   .btn.btn-primary {
     font-size: 17px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: .2em; }
   .btn:hover {
     -webkit-box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;

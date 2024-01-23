@@ -66,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFByb2R1Y3RMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/ShoppingProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFNob3BwaW5nUHJvZHVjdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -108,6 +112,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/SEC_User/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU0VDX1VzZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/Index.cshtml]
