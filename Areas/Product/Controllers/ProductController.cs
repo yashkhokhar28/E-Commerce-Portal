@@ -35,6 +35,14 @@ namespace ECommerce.Areas.Product.Controllers
         }
         #endregion
 
+        #region Product List By ID (User Side)
+        public IActionResult ShoppingProductByID(int ProductID)
+        {
+            DataTable dataTable = productDAL.ShoppingProductByID(ProductID);
+            return View(dataTable);
+        }
+        #endregion
+
         #region Product Save
         public IActionResult ProductSave(ProductModel productModel)
         {

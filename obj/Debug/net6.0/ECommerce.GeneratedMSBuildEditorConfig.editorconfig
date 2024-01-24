@@ -66,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFByb2R1Y3RMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/ShoppingProductByID.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFNob3BwaW5nUHJvZHVjdEJ5SUQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Product/Views/Product/ShoppingProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0XFNob3BwaW5nUHJvZHVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

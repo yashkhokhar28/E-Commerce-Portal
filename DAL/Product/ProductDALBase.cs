@@ -51,6 +51,28 @@ namespace ECommerce.DAL.Product
         }
         #endregion
 
+        #region Method : Shopping Product By ID
+        public DataTable ShoppingProductByID(int ProductID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_SelectByID");
+                sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
+                DataTable dataTable = new DataTable();
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                {
+                    dataTable.Load(dataReader);
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
+
         #region Method : Product Insert & Update
         public bool ProductSave(ProductModel productModel)
         {
