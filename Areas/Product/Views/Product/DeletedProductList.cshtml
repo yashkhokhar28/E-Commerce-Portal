@@ -22,7 +22,7 @@
                             <!--begin::Page title-->
                             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                                 <!--begin::Title-->
-                                <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">eCommerce Dashboard</h1>
+                                <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Shoppers</h1>
                                 <!--end::Title-->
                                 <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -42,6 +42,20 @@
                                 <!--end::Breadcrumb-->
                             </div>
                             <!--end::Page title-->
+                            @if (ViewBag.Retrive != null)
+                            {
+                                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header">
+                                        <i class="ki-duotone ki-abstract-39 fs-2 text-primary me-3"><span class="path1"></span><span class="path2"></span></i>
+                                        <strong class="me-auto">Shoppers</strong>
+                                        <small>Just Now</small>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        @ViewBag.Retrive
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <!--end::Toolbar container-->
                     </div>

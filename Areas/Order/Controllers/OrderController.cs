@@ -15,6 +15,7 @@ namespace ECommerce.Areas.Order.Controllers
         public IActionResult PendingOrderList()
         {
             DataTable dataTable = orderDAL.PendingOrderSelectAll();
+            ViewBag.Complete = TempData["Complete"];
             return View(dataTable);
         }
         #endregion
@@ -41,6 +42,7 @@ namespace ECommerce.Areas.Order.Controllers
             bool isSuccess = orderDAL.OrderComplete(OrderID);
             if (isSuccess)
             {
+                TempData["Complete"] = "Order Completed Successfully";
                 return RedirectToAction("PendingOrderList");
             }
             return RedirectToAction("PendingOrderList");

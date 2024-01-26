@@ -49,7 +49,6 @@ Where [dbo].[MST_Product].[ProductID] = @ProductID
 
 --Insert Product
 ALTER PROCEDURE [dbo].[Product_Insert]
-	@ProductID		int, 
 	@ProductName	varchar(100),
 	@Discription	varchar(500),
 	@Price			decimal(12,2),
@@ -65,7 +64,6 @@ AS
 
 INSERT INTO [dbo].[MST_Product]
 (
-	[ProductID], 
 	[ProductName], 
 	[Discription], 
 	[Price],
@@ -79,8 +77,7 @@ INSERT INTO [dbo].[MST_Product]
 	[Modified]
 )
 VALUES
-(
-		@ProductID,		
+(	
 		@ProductName,	
 		@Discription,	
 		@Price,			

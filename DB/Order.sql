@@ -67,6 +67,7 @@ AS
 UPDATE [dbo].[Order]
 
 SET [isCompleted] = 1,
-	[OrderStatus] = 'Completed'
+	[OrderStatus] = 'Completed',
+	[Completed] = GETDATE()
 	
 WHERE [dbo].[Order].[OrderID] = @OrderID

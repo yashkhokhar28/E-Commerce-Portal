@@ -1,6 +1,4 @@
-﻿using ECommerce.Areas.Category.Models;
-using ECommerce.Areas.Product.Models;
-using Microsoft.AspNetCore.Hosting;
+﻿using ECommerce.Areas.Product.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data;
 using System.Data.Common;

@@ -15,6 +15,9 @@ namespace ECommerce.Areas.Product.Controllers
         public IActionResult ProductList()
         {
             DataTable dataTable = productDAL.ProductSelectAll();
+            ViewBag.Save = TempData["Save"];
+            ViewBag.Delete = TempData["Delete"];
+            ViewBag.Update = TempData["Update"];
             return View(dataTable);
         }
         #endregion
@@ -23,6 +26,7 @@ namespace ECommerce.Areas.Product.Controllers
         public IActionResult DeletedProductList()
         {
             DataTable dataTable = productDAL.ProductDeletedSelectAll();
+            ViewBag.Retrive = TempData["Retrive"];
             return View(dataTable);
         }
         #endregion
@@ -49,8 +53,14 @@ namespace ECommerce.Areas.Product.Controllers
             if (ModelState.IsValid)
             {
                 if (productDAL.ProductSave(productModel))
-
+                {
+                    TempData["Save"] = "Product Saved Successfully";
                     return RedirectToAction("ProductList");
+                }
+                else
+                {
+                    return RedirectToAction("ProductList");
+                }
             }
             return View("ProductAddEdit");
         }
@@ -79,6 +89,7 @@ namespace ECommerce.Areas.Product.Controllers
             bool isSuccess = productDAL.ProductDelete(ProductID);
             if (isSuccess)
             {
+                TempData["Delete"] = "Product Deleted Successfully";
                 return RedirectToAction("ProductList");
             }
             return RedirectToAction("ProductList");
@@ -91,6 +102,7 @@ namespace ECommerce.Areas.Product.Controllers
             bool isSuccess = productDAL.ProductRetrive(ProductID);
             if (isSuccess)
             {
+                TempData["Retrive"] = "Product Retrived Successfully";
                 return RedirectToAction("DeletedProductList");
             }
             return RedirectToAction("DeletedProductList");

@@ -14,6 +14,8 @@ namespace ECommerce.Areas.Category.Controllers
         public IActionResult CategoryList()
         {
             DataTable dataTable = categoryDAL.CategorySelectAll();
+            ViewBag.Save = TempData["Save"];
+            ViewBag.Delete = TempData["Delete"];
             return View(dataTable);
         }
         #endregion
@@ -24,8 +26,16 @@ namespace ECommerce.Areas.Category.Controllers
             if (ModelState.IsValid)
             {
                 if (categoryDAL.CategorySave(categoryModel))
-
+                {
+                    TempData["Save"] = "Category Saved Successfully";
                     return RedirectToAction("CategoryList");
+                }
+                else
+                {
+                    return RedirectToAction("CategoryList");
+                }
+
+
 
             }
             return View("CategoryAddEdit");
@@ -53,6 +63,7 @@ namespace ECommerce.Areas.Category.Controllers
             bool isSuccess = categoryDAL.CategoryDelete(CategoryID);
             if (isSuccess)
             {
+                TempData["Delete"] = "Category Deleted Successfully";
                 return RedirectToAction("CategoryList");
             }
             return RedirectToAction("CategoryList");

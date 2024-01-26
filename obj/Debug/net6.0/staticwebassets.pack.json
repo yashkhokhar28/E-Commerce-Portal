@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Upload\\10.png"
     },
     {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\14.png",
+      "PackagePath": "staticwebassets\\Upload\\14.png"
+    },
+    {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\16.png",
       "PackagePath": "staticwebassets\\Upload\\16.png"
     },
@@ -27,6 +31,10 @@
     {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\2.png",
       "PackagePath": "staticwebassets\\Upload\\2.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\24.png",
+      "PackagePath": "staticwebassets\\Upload\\24.png"
     },
     {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\3.png",
@@ -45,8 +53,16 @@
       "PackagePath": "staticwebassets\\Upload\\4.png"
     },
     {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\6.png",
+      "PackagePath": "staticwebassets\\Upload\\6.png"
+    },
+    {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\65.png",
       "PackagePath": "staticwebassets\\Upload\\65.png"
+    },
+    {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\8.png",
+      "PackagePath": "staticwebassets\\Upload\\8.png"
     },
     {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\Upload\\85.png",
