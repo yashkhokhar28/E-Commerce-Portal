@@ -1,5 +1,8 @@
-﻿using ECommerce.Models;
+﻿using ECommerce.BAL;
+using ECommerce.DAL.Cart;
+using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Diagnostics;
 
 namespace ECommerce.Controllers
@@ -15,6 +18,16 @@ namespace ECommerce.Controllers
 
         public IActionResult Index()
         {
+            CartDAL cartDAL = new CartDAL();
+            DataTable dataTable = cartDAL.CartCount(Convert.ToInt32(CommenVariable.UserID()));
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    HttpContext.Session.SetString("CartCount", dataRow["TotalCartItems"].ToString());
+                    break;
+                }
+            }
             return View();
         }
 

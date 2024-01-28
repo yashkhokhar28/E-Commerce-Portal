@@ -27,5 +27,10 @@
 		{
 			return _HttpContextAccessor.HttpContext.Session.GetString("EmailAddress");
 		}
-	}
+
+        public static string CartCount()
+        {
+            return _HttpContextAccessor.HttpContext.Session.GetString("CartCount");
+        }
+    }
 }

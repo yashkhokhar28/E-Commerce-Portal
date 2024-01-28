@@ -4,6 +4,7 @@
 }
 
 @using System.Data
+@using ECommerce.BAL
 @model DataTable
 
 
@@ -27,20 +28,19 @@
                 <h2 class="text-black">@Model.Rows[0]["ProductName"]</h2>
                 <p>@Model.Rows[0]["Discription"]</p>
                 <p><strong class="text-primary h4">@Model.Rows[0]["Price"]</strong></p>
-                <div class="mb-5">
+                @* <div class="mb-5">
                     <div class="input-group mb-3" style="max-width: 120px;">
                         <div class="input-group-prepend">
                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                         </div>
-                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <input type="text" class="form-control text-center" value="0" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                         </div>
                     </div>
 
-                </div>
-                <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
-
+                </div> *@
+                <p><a asp-area="Cart" asp-controller="Cart" asp-action="CartInsert" asp-route-productid="@Convert.ToInt32(Model.Rows[0]["ProductID"])" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
             </div>
         </div>
     </div>

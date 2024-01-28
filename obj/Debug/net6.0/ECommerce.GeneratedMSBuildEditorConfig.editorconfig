@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\ASP.NET\Projects\ECommerce\E-Commerce-Portal
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Cart/Views/Cart/CartList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FydFxWaWV3c1xDYXJ0XENhcnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Cart/Views/Cart/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FydFxWaWV3c1xDYXJ0XF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Cart/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FydFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Category/Views/Category/CategoryAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

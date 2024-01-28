@@ -59,11 +59,11 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                                    <li><a><span class="icon icon-heart-o"></span></a></li>
                                     <li>
-                                        <a class="site-cart">
+                                        <a class="site-cart" asp-area="Cart" asp-controller="Cart" asp-action="CartList">
                                             <span class="icon icon-shopping_cart"></span>
-                                            <span class="count">2</span>
+                                            <span class="count">@CommenVariable.CartCount()</span>
                                         </a>
                                     </li>
 
