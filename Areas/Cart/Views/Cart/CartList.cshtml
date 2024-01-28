@@ -53,7 +53,7 @@
                                         </div>
 
                                     </td>
-                                    <td>@dataRow["Price"]</td>
+                                    <td>@(Convert.ToDouble(dataRow["Price"]) * Convert.ToDouble(dataRow["Quantity"]))</td>
                                     <td><a class="btn btn-primary btn-sm" asp-area="Cart" asp-controller="Cart" asp-action="Remove_Cart_Product" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])">X</a></td>
                                 </tr>
                             }
@@ -114,7 +114,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-primary btn-lg py-3 btn-block">Proceed To Checkout</button>
+                                <a class="btn btn-primary btn-lg py-3 btn-block" asp-area="Checkout" asp-controller="Checkout" asp-action="Checkout">Proceed To Checkout</a>
                             </div>
                         </div>
                     </div>

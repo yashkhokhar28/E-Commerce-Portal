@@ -14,6 +14,7 @@
   <ItemGroup>
     <Folder Include="Areas\Cart\Data\" />
     <Folder Include="Areas\Category\Data\" />
+    <Folder Include="Areas\Checkout\Data\" />
     <Folder Include="Areas\Order\Data\" />
     <Folder Include="Areas\Product\Data\" />
     <Folder Include="Areas\SEC_Admin\Data\" />

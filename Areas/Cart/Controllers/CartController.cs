@@ -16,7 +16,7 @@ namespace ECommerce.Areas.Cart.Controllers
     {
         CartDAL cartDAL = new CartDAL();
 
-        #region Cart Insert
+        #region Cart
         public IActionResult CartList()
         {
             DataTable dataTable = cartDAL.CartSelectAll();
