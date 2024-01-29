@@ -1,4 +1,6 @@
-﻿using ECommerce.DAL.Order;
+﻿using ECommerce.Areas.Category.Models;
+using ECommerce.DAL.Category;
+using ECommerce.DAL.Order;
 using ECommerce.DAL.Product;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -46,6 +48,24 @@ namespace ECommerce.Areas.Order.Controllers
                 return RedirectToAction("PendingOrderList");
             }
             return RedirectToAction("PendingOrderList");
+        }
+        #endregion
+
+        #region Order Insert
+        public IActionResult Order_Insert(int UserID, int ProductID, int AddressID)
+        {
+            if (ModelState.IsValid)
+            {
+                if (orderDAL.OrderInsert(UserID, ProductID, AddressID))
+                {
+                    return RedirectToAction("ThankYou", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("ThankYou", "Home");
+                }
+            }
+            return RedirectToAction("ThankYou", "Home");
         }
         #endregion
     }

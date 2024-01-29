@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Checkout/Views/Checkout/Billing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2hlY2tvdXRcVmlld3NcQ2hlY2tvdXRcQmlsbGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Areas/Checkout/Views/Checkout/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2hlY2tvdXRcVmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -156,6 +160,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Home/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaGFua1lvdS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.NET/Projects/ECommerce/E-Commerce-Portal/Views/Shared/Error.cshtml]

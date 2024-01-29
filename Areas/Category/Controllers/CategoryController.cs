@@ -34,9 +34,6 @@ namespace ECommerce.Areas.Category.Controllers
                 {
                     return RedirectToAction("CategoryList");
                 }
-
-
-
             }
             return View("CategoryAddEdit");
         }

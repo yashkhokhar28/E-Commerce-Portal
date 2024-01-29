@@ -9,13 +9,6 @@ namespace ECommerce.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             CartDAL cartDAL = new CartDAL();
@@ -37,6 +30,11 @@ namespace ECommerce.Controllers
         }
 
         public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult ThankYou()
         {
             return View();
         }

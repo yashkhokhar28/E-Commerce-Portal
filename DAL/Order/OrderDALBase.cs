@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
+﻿using ECommerce.Areas.Address.Models;
+using ECommerce.Areas.Order.Models;
+using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data;
 using System.Data.Common;
 
@@ -14,7 +16,7 @@ namespace ECommerce.DAL.Order
                 SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Pending_Order_SelectAll");
                 DataTable dataTable = new DataTable();
-                using(IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
                 {
                     dataTable.Load(dataReader);
                 }
@@ -78,6 +80,31 @@ namespace ECommerce.DAL.Order
                 SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Complete_Order");
                 sqlDatabase.AddInParameter(dbCommand, "@OrderID", DbType.Int32, OrderID);
+                bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Method : Order Insert
+        public bool OrderInsert(int UserID, int ProductID, int AddressID)
+        {
+            SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+            try
+            {
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Order_Insert");
+                sqlDatabase.AddInParameter(dbCommand, "@AddressID", DbType.Int32, AddressID);
+                sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
+                sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
+                sqlDatabase.AddInParameter(dbCommand, "@isCompleted", DbType.Boolean, DBNull.Value);
+                sqlDatabase.AddInParameter(dbCommand, "@OrderStatus", DbType.String, DBNull.Value);
+                sqlDatabase.AddInParameter(dbCommand, "@Created", DbType.DateTime, DBNull.Value);
+                sqlDatabase.AddInParameter(dbCommand, "@Modified", DbType.DateTime, DBNull.Value);
+                sqlDatabase.AddInParameter(dbCommand, "@Completed", DbType.DateTime, DBNull.Value);
                 bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
                 return isSuccess;
             }

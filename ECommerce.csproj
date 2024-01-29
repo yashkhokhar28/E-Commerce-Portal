@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Address\Controllers\" />
+    <Folder Include="Areas\Address\Data\" />
+    <Folder Include="Areas\Address\Views\" />
     <Folder Include="Areas\Cart\Data\" />
     <Folder Include="Areas\Category\Data\" />
     <Folder Include="Areas\Checkout\Data\" />
