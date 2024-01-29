@@ -91,7 +91,7 @@ namespace ECommerce.DAL.Order
         #endregion
 
         #region Method : Order Insert
-        public bool OrderInsert(int UserID, int ProductID, int AddressID)
+        public bool OrderInsert(int UserID, int[] ProductIDs, int AddressID)
         {
             SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
             try
@@ -99,7 +99,17 @@ namespace ECommerce.DAL.Order
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Order_Insert");
                 sqlDatabase.AddInParameter(dbCommand, "@AddressID", DbType.Int32, AddressID);
                 sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
-                sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
+                DataTable productIdsTable = new DataTable();
+                productIdsTable.Columns.Add("ProductID", typeof(int));
+                foreach (var productId in ProductIDs)
+                {
+                    productIdsTable.Rows.Add(productId);
+                }
+                // Convert DataTable to a comma-separated string of ProductIDs
+                string productIdsString = string.Join(",", productIdsTable.AsEnumerable().Select(row => row.Field<int>("ProductID")));
+
+                // Pass the string as a parameter
+                sqlDatabase.AddInParameter(dbCommand, "@ProductIDs", DbType.String, productIdsString);
                 sqlDatabase.AddInParameter(dbCommand, "@isCompleted", DbType.Boolean, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@OrderStatus", DbType.String, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@Created", DbType.DateTime, DBNull.Value);

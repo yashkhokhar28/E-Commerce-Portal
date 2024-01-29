@@ -52,11 +52,11 @@ namespace ECommerce.Areas.Order.Controllers
         #endregion
 
         #region Order Insert
-        public IActionResult Order_Insert(int UserID, int ProductID, int AddressID)
+        public IActionResult Order_Insert(int UserID, int[] ProductIDs, int AddressID)
         {
             if (ModelState.IsValid)
             {
-                if (orderDAL.OrderInsert(UserID, ProductID, AddressID))
+                if (orderDAL.OrderInsert(UserID, ProductIDs, AddressID))
                 {
                     return RedirectToAction("ThankYou", "Home");
                 }

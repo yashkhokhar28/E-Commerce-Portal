@@ -7,14 +7,18 @@
 @using ECommerce.BAL
 @model ECommerce.Models.ViewModel
 
-
 <div class="bg-light py-3">
     <div class="container">
         <div class="row">
-            <a asp-controller="Home" asp-action="Index">Home</a> <span class="mx-2 mb-0">/</span><a asp-area="Cart" asp-controller="Cart" asp-action="CartList">Cart</a> <span class="mx-2 mb-0">/</span>  <strong class="text-black">Checkout</strong>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <span class="mx-2 mb-0">/</span>
+            <a asp-area="Cart" asp-controller="Cart" asp-action="CartList">Cart</a>
+            <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Checkout</strong>
         </div>
     </div>
 </div>
+
 <div class="site-section">
     <div class="container">
         <div class="col-md-12">
@@ -45,43 +49,24 @@
                                     <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
                                     <td class="text-black font-weight-bold"><strong>@Model.CartTable.Rows[0]["CartTotal"]</strong></td>
                                 </tr>
-
                             </tbody>
                         </table>
 
-                        <div class="border p-3 mb-3">
-                            <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
+                        <form asp-area="Order" asp-controller="Order" asp-action="Order_Insert" method="post">
+                            <input type="hidden" name="userid" value="@Convert.ToInt32(CommenVariable.UserID())" />
+                            <input type="hidden" name="addressid" value="@Model.AddressTable.Rows[0]["AddressID"]" />
 
-                            <div class="collapse" id="collapsebank">
-                                <div class="py-2">
-                                    <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                </div>
+                            @foreach (DataRow dataRow in Model.CartTable.Rows)
+                            {
+                                <input type="hidden" name="productids[]" value="@dataRow["ProductID"]" />
+                            }
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-lg py-3 btn-block">
+                                    Place Order
+                                </button>
                             </div>
-                        </div>
-
-                        <div class="border p-3 mb-3">
-                            <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
-
-                            <div class="collapse" id="collapsecheque">
-                                <div class="py-2">
-                                    <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="border p-3 mb-5">
-                            <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
-
-                            <div class="collapse" id="collapsepaypal">
-                                <div class="py-2">
-                                    <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <a class="btn btn-primary btn-lg py-3 btn-block" asp-area="Order" asp-controller="Order" asp-action="Order_Insert" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())" asp-route-productid="@Model.CartTable.Rows[0]["ProductID"]" asp-route-addressid="@Model.AddressTable.Rows[0]["AddressID"]">Place Order</a>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
