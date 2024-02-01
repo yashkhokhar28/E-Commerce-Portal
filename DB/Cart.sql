@@ -43,12 +43,15 @@ SET [Quantity] = [Quantity] - 1
 WHERE [dbo].[Cart].[ProductID] = @ProductID
 
 --Cart Select All
-ALTER PROCEDURE [Cart_SelectAll]
+ALTER PROCEDURE [dbo].[Cart_SelectAll]
+@UserID		INT
 AS
 DECLARE @CartTotal int
 SELECT @CartTotal = SUM([dbo].[MST_Product].[Price] * [dbo].[Cart].[Quantity])
 FROM [dbo].[MST_Product]
-INNER JOIN [dbo].[Cart] ON [dbo].[Cart].[ProductID] = [dbo].[MST_Product].[ProductID];
+INNER JOIN [dbo].[Cart] ON [dbo].[Cart].[ProductID] = [dbo].[MST_Product].[ProductID]
+WHERE [dbo].[Cart].[UserID] = @UserID
+
 
 SELECT
 @CartTotal as CartTotal,
@@ -61,6 +64,8 @@ SELECT
 FROM [dbo].[Cart]
 INNER JOIN [dbo].[MST_Product]
 ON [dbo].[MST_Product].[ProductID] = [dbo].[Cart].[ProductID]
+WHERE [dbo].[Cart].[UserID] = @UserID
+
 
 -- Remove Cart Product
 ALTER PROCEDURE [Remove_Cart_Product]
