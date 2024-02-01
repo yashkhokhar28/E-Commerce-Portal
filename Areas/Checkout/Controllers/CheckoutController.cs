@@ -1,4 +1,5 @@
 ﻿using ECommerce.Areas.Address.Models;
+using ECommerce.BAL;
 using ECommerce.DAL.Checkout;
 using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ namespace ECommerce.Areas.Checkout.Controllers
         #region Checkout
         public IActionResult Checkout()
         {
-            DataTable dataTable1 = checkoutDAL.Checkout();
+            DataTable dataTable1 = checkoutDAL.Checkout(Convert.ToInt32(CommenVariable.UserID()));
             DataTable dataTable2 = checkoutDAL.Address_SelectAll();
             ViewModel viewModel = new ViewModel()
             {

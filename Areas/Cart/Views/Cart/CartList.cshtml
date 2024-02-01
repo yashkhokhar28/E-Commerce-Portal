@@ -4,6 +4,7 @@
 }
 
 @using System.Data
+@using ECommerce.BAL
 @model DataTable
 
 <div class="bg-light py-3">
@@ -44,17 +45,17 @@
                                     <td>
                                         <div class="input-group mb-3" style="max-width: 120px;">
                                             <div class="input-group-prepend">
-                                                <a class="btn btn-outline-primary" asp-area="Cart" asp-controller="Cart" asp-action="Decrement_Quantity" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])">&minus;</a>
+                                                <a class="btn btn-outline-primary" asp-area="Cart" asp-controller="Cart" asp-action="Decrement_Quantity" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())">&minus;</a>
                                             </div>
                                             <lable class="form-control text-center">@dataRow["Quantity"]</lable>
                                             <div class="input-group-append">
-                                                <a class="btn btn-outline-primary" asp-area="Cart" asp-controller="Cart" asp-action="Increment_Quantity" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])">&plus;</a>
+                                                <a class="btn btn-outline-primary" asp-area="Cart" asp-controller="Cart" asp-action="Increment_Quantity" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())">&plus;</a>
                                             </div>
                                         </div>
 
                                     </td>
                                     <td>@(Convert.ToDouble(dataRow["Price"]) * Convert.ToDouble(dataRow["Quantity"]))</td>
-                                    <td><a class="btn btn-primary btn-sm" asp-area="Cart" asp-controller="Cart" asp-action="Remove_Cart_Product" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])">X</a></td>
+                                    <td><a class="btn btn-primary btn-sm" asp-area="Cart" asp-controller="Cart" asp-action="Remove_Cart_Product" asp-route-productid="@Convert.ToInt32(dataRow["ProductID"])" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())">X</a></td>
                                 </tr>
                             }
 

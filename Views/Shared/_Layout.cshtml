@@ -1,4 +1,7 @@
 ﻿@using ECommerce.BAL
+@{
+    Console.WriteLine("UserID in View Page : " + Convert.ToInt32(CommenVariable.UserID()) + "Datat Type Of UserID : " + Convert.ToInt32(CommenVariable.UserID()).GetType());
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +64,7 @@
                                     </li>
                                     <li><a><span class="icon icon-heart-o"></span></a></li>
                                     <li>
-                                        <a class="site-cart" asp-area="Cart" asp-controller="Cart" asp-action="CartList">
+                                        <a class="site-cart" asp-area="Cart" asp-controller="Cart" asp-action="CartList" asp-route-UserID="@Convert.ToInt32(CommenVariable.UserID())">
                                             <span class="icon icon-shopping_cart"></span>
                                             <span class="count">@CommenVariable.CartCount()</span>
                                         </a>

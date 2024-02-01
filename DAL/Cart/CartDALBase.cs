@@ -11,12 +11,13 @@ namespace ECommerce.DAL.Cart
     public class CartDALBase : DALHelper
     {
         #region Method : Cart SelectAll
-        public DataTable CartSelectAll()
+        public DataTable CartSelectAll(int UserID)
         {
             try
             {
                 SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Cart_SelectAll");
+                sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, Convert.ToInt32(UserID));
                 DataTable dataTable = new DataTable();
                 using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
                 {
@@ -119,7 +120,7 @@ namespace ECommerce.DAL.Cart
                 DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("CartCount");
                 sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
                 DataTable dataTable = new DataTable();
-                using(IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
                 {
                     dataTable.Load(dataReader);
                 }
