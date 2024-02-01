@@ -43,6 +43,7 @@ namespace ECommerce.DAL.Cart
                 sqlDatabase.AddInParameter(dbCommand, "@ProductID", DbType.Int32, ProductID);
                 sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
                 sqlDatabase.AddInParameter(dbCommand, "@Quantity", DbType.Int32, DBNull.Value);
+                sqlDatabase.AddInParameter(dbCommand, "@isOrderDone", DbType.Boolean, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@Created", DbType.DateTime, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@Modified", DbType.DateTime, DBNull.Value);
                 bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
@@ -129,6 +130,24 @@ namespace ECommerce.DAL.Cart
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        #endregion
+
+        #region Method : Update Order Status
+        public bool Update_Order_Status(int UserID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Update_Order_Status");
+                sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
+                bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
         #endregion

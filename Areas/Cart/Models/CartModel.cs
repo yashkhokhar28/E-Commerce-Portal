@@ -10,6 +10,8 @@
 
         public int Quantity { get; set; }
 
+        public bool isOrderDone { get; set; }
+
         public DateTime Created { get; set; }
 
         public DateTime Modified { get; set; }

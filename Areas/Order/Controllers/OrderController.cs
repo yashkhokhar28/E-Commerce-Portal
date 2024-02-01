@@ -1,4 +1,6 @@
 ﻿using ECommerce.Areas.Category.Models;
+using ECommerce.BAL;
+using ECommerce.DAL.Cart;
 using ECommerce.DAL.Category;
 using ECommerce.DAL.Order;
 using ECommerce.DAL.Product;
@@ -12,6 +14,7 @@ namespace ECommerce.Areas.Order.Controllers
     public class OrderController : Controller
     {
         OrderDAL orderDAL = new OrderDAL();
+        CartDAL cartDAL = new CartDAL();
 
         #region Order List (Pending)
         public IActionResult PendingOrderList()
@@ -58,7 +61,24 @@ namespace ECommerce.Areas.Order.Controllers
             {
                 if (orderDAL.OrderInsert(UserID, ProductIDs, AddressID))
                 {
-                    return RedirectToAction("ThankYou", "Home");
+                    bool isSuccess = cartDAL.Update_Order_Status(Convert.ToInt32(CommenVariable.UserID()));
+                    if (isSuccess)
+                    {
+                        DataTable dataTable = cartDAL.CartCount(Convert.ToInt32(CommenVariable.UserID()));
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            foreach (DataRow dataRow in dataTable.Rows)
+                            {
+                                HttpContext.Session.SetString("CartCount", dataRow["TotalCartItems"].ToString());
+                                break;
+                            }
+                        }
+                        return RedirectToAction("ThankYou", "Home");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ThankYou", "Home");
+                    }                   
                 }
                 else
                 {

@@ -16,7 +16,7 @@ namespace ECommerce.Areas.Cart.Controllers
     {
         CartDAL cartDAL = new CartDAL();
 
-        #region Cart
+        #region Cart List
         public IActionResult CartList()
         {
             DataTable dataTable = cartDAL.CartSelectAll(Convert.ToInt32(CommenVariable.UserID()));
