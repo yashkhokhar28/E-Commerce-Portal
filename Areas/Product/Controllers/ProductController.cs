@@ -35,6 +35,7 @@ namespace ECommerce.Areas.Product.Controllers
         public IActionResult ShoppingProductList()
         {
             DataTable dataTable = productDAL.ProductSelectAll();
+            ViewBag.CategoryList = productDAL.CategoryDropDown();
             return View(dataTable);
         }
         #endregion
