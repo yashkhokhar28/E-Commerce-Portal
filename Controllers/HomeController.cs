@@ -1,12 +1,15 @@
 ﻿using ECommerce.BAL;
 using ECommerce.DAL.Cart;
 using ECommerce.Models;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using System.Data;
 using System.Diagnostics;
 
 namespace ECommerce.Controllers
 {
+
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -36,6 +39,22 @@ namespace ECommerce.Controllers
 
         public IActionResult ThankYou()
         {
+            //var message = new MimeMessage();
+            //message.From.Add(new MailboxAddress("Yash Khokhar", "yashkhokhar28@gmail.com"));
+            //message.To.Add(new MailboxAddress(CommenVariable.FirstName(), CommenVariable.Email()));
+            //message.Subject = "Order Confirmation";
+            //message.Body = new TextPart("plain")
+            //{
+            //    Text = "Hiii"
+            //};
+            //using (var client = new SmtpClient())
+            //{
+            //    client.Connect("smtp.gmail.com", 587, false);
+            //    client.Authenticate("FromEmail300@gmail.com", "YourPassword");
+
+            //    client.Send(message);
+            //    client.Disconnect(true);
+            //}
             return View();
         }
 
