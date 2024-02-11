@@ -226,5 +226,35 @@ namespace ECommerce.DAL.Product
             }
         }
         #endregion
+
+        #region Method : Delete Multiple Product
+        public bool DeleteMultipleProducts(int[] ProductIDs)
+        {
+            SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+            try
+            {
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Product_DeleteMultiple");
+                DataTable productIdsTable = new DataTable();
+                productIdsTable.Columns.Add("ProductID", typeof(int));
+                foreach (var productId in ProductIDs)
+                {
+                    productIdsTable.Rows.Add(productId);
+                }
+                // Convert DataTable to a comma-separated string of ProductIDs
+                string productIdsString = string.Join(",", productIdsTable.AsEnumerable().Select(row => row.Field<int>("ProductID")));
+
+                // Pass the string as a parameter
+                sqlDatabase.AddInParameter(dbCommand, "@ProductIDs", DbType.String, productIdsString);
+                bool isSuccess = Convert.ToBoolean(sqlDatabase.ExecuteNonQuery(dbCommand));
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
+    #endregion
 }
+
