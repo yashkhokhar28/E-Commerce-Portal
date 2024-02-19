@@ -1,8 +1,10 @@
 ﻿using ECommerce.Areas.Product.Models;
 using ECommerce.BAL;
 using ECommerce.DAL.Cart;
+using ECommerce.DAL.Checkout;
 using ECommerce.DAL.Order;
 using ECommerce.DAL.Product;
+using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Data;
@@ -40,7 +42,11 @@ namespace ECommerce.Areas.Product.Controllers
         {
             DataTable dataTable = productDAL.ProductSelectAll();
             ViewBag.CategoryList = productDAL.CategoryDropDown();
-            return View(dataTable);
+            ViewModel viewModel = new ViewModel()
+            {
+                ProductTable = dataTable,
+            };
+            return View(viewModel);
         }
         #endregion
 

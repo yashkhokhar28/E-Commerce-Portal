@@ -1,4 +1,5 @@
 ﻿using ECommerce.Areas.Cart.Models;
+using ECommerce.Areas.Category.Models;
 using System.Data;
 
 namespace ECommerce.Models
@@ -7,5 +8,9 @@ namespace ECommerce.Models
     {
         public DataTable CartTable { get; set; }
         public DataTable AddressTable { get; set; }
+
+        public CategoryDropDownModel CategoryList { get; set; }
+
+        public DataTable ProductTable { get; set; }
     }
 }
