@@ -25,12 +25,12 @@ namespace ECommerce.Areas.Cart.Controllers
         #endregion
 
         #region Cart Insert
-        public IActionResult CartInsert(CartModel cartModel, int ProductID, int UserID)
+        public IActionResult CartInsert(int ProductID, int UserID)
         {
 
             if (ModelState.IsValid)
             {
-                if (cartDAL.CartInsert(cartModel, ProductID, UserID))
+                if (cartDAL.CartInsert(ProductID, UserID))
                 {
                     CartDAL cartDAL = new CartDAL();
                     DataTable dataTable = cartDAL.CartCount(Convert.ToInt32(CommenVariable.UserID()));

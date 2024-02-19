@@ -7,6 +7,7 @@ namespace ECommerce.DAL.Category
 {
     public class CategoryDALBase : DALHelper
     {
+
         #region Method : Category SelectAll
         public DataTable CategorySelectAll()
         {
@@ -111,5 +112,6 @@ namespace ECommerce.DAL.Category
 
         }
         #endregion
+
     }
 }

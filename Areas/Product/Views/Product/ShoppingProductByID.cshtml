@@ -38,7 +38,6 @@
                             <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                         </div>
                     </div>
-
                 </div> *@
                 <p><a asp-area="Cart" asp-controller="Cart" asp-action="CartInsert" asp-route-productid="@Convert.ToInt32(Model.Rows[0]["ProductID"])" asp-route-userid="@Convert.ToInt32(CommenVariable.UserID())" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
             </div>
