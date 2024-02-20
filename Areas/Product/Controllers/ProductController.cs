@@ -1,12 +1,7 @@
 ﻿using ECommerce.Areas.Product.Models;
-using ECommerce.BAL;
-using ECommerce.DAL.Cart;
-using ECommerce.DAL.Checkout;
-using ECommerce.DAL.Order;
+using ECommerce.DAL.Category;
 using ECommerce.DAL.Product;
-using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
 using System.Data;
 
 namespace ECommerce.Areas.Product.Controllers
@@ -16,6 +11,7 @@ namespace ECommerce.Areas.Product.Controllers
     public class ProductController : Controller
     {
         ProductDAL productDAL = new ProductDAL();
+        CategoryDAL categoryDAL = new CategoryDAL();
 
         #region Product List (Active)
         public IActionResult ProductList()
@@ -42,11 +38,7 @@ namespace ECommerce.Areas.Product.Controllers
         {
             DataTable dataTable = productDAL.ProductSelectAll();
             ViewBag.CategoryList = productDAL.CategoryDropDown();
-            ViewModel viewModel = new ViewModel()
-            {
-                ProductTable = dataTable,
-            };
-            return View(viewModel);
+            return View(dataTable);
         }
         #endregion
 
@@ -133,6 +125,24 @@ namespace ECommerce.Areas.Product.Controllers
             else
             {
                 return RedirectToAction("ProductList");
+            }
+        }
+        #endregion
+
+        #region Category Filter
+        public IActionResult ProductFilter(ProductFilterModel productFilterModel)
+        {
+            if (ModelState.IsValid)
+            {
+                DataTable dataTable = productDAL.ProductFilter(productFilterModel);
+                ViewBag.CategoryList = productDAL.CategoryDropDown();
+                ModelState.Clear();
+                return View("ShoppingProductList", dataTable);
+            }
+            else
+            {
+                // Handle invalid model state if needed
+                return View("ShoppingProductList");
             }
         }
         #endregion

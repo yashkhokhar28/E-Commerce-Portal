@@ -1,5 +1,6 @@
 ﻿using ECommerce.Areas.Category.Models;
 using ECommerce.DAL.Category;
+using ECommerce.DAL.Product;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
@@ -10,6 +11,7 @@ namespace ECommerce.Areas.Category.Controllers
     public class CategoryController : Controller
     {
         CategoryDAL categoryDAL = new CategoryDAL();
+        ProductDAL productDAL = new ProductDAL();
         #region Category List
         public IActionResult CategoryList()
         {
@@ -66,5 +68,7 @@ namespace ECommerce.Areas.Category.Controllers
             return RedirectToAction("CategoryList");
         }
         #endregion
+
+        
     }
 }
