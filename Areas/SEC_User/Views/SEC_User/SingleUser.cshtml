@@ -101,9 +101,9 @@
                                                 </div>
                                                 <!--begin::Details item-->
                                                 <!--begin::Details item-->
-                                                <div class="fw-bold mt-5">Delivery Address</div>
+                                                @* <div class="fw-bold mt-5">Delivery Address</div> *@
                                                 <div class="text-gray-600">
-                                                    @Model.Rows[0]["Address"]
+                                                    @* @Model.Rows[0]["Address"] *@
                                                 </div>
                                                 <!--begin::Details item-->
                                                 <!--begin::Details item-->
@@ -165,7 +165,6 @@
                                                         <tbody class="fs-6 fw-semibold text-gray-600">
                                                             @foreach (DataRow dataRow in Model.Rows)
                                                             {
-                                                                Console.WriteLine(dataRow["OrderID"]);
                                                                 <tr>
                                                                     <td>
                                                                         <a class="text-gray-600 text-hover-primary mb-1">#@dataRow["OrderID"]</a>
@@ -180,8 +179,6 @@
                                                                             <span class="badge badge-light-info">N/A</span>
                                                                         }
                                                                     </td>
-
-
                                                                     <td>@dataRow["Price"]</td>
                                                                     <td>@dataRow["Created"]</td>
                                                                 </tr>
