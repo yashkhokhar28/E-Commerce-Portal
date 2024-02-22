@@ -10,7 +10,8 @@ namespace ECommerce.Models
         public DataTable AddressTable { get; set; }
 
         public CategoryDropDownModel CategoryList { get; set; }
-
         public DataTable ProductTable { get; set; }
+        public DataTable UserDetails { get; set; }
+        public DataTable UserOrderDetails { get; set; }
     }
 }

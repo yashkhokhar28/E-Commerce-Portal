@@ -1,8 +1,10 @@
 ﻿using ECommerce.Areas.Address.Models;
 using ECommerce.Areas.Order.Models;
+using ECommerce.BAL;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace ECommerce.DAL.Order
 {
@@ -121,6 +123,31 @@ namespace ECommerce.DAL.Order
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+        #endregion
+
+        #region Get Order List For Excel
+        public List<ExportExcelOrderModel> GetOrderList()
+        {
+            List<ExportExcelOrderModel> exportExcelOrderModels = new List<ExportExcelOrderModel>();
+            SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+            DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Pending_Order_SelectAll");
+            using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+            {
+                while (dataReader.Read())
+                {
+                    ExportExcelOrderModel exportExcelOrderModel = new ExportExcelOrderModel
+                    {
+                        OrderID = Convert.ToInt32(dataReader["OrderID"]),
+                        FirstName = dataReader["FirstName"].ToString(),
+                        Price = Convert.ToDouble(dataReader["Price"]),
+                        OrderStatus = dataReader["OrderStatus"].ToString(),
+                        Created = Convert.ToDateTime(dataReader["Created"])
+                    };
+                    exportExcelOrderModels.Add(exportExcelOrderModel);
+                }
+                return exportExcelOrderModels;
             }
         }
         #endregion

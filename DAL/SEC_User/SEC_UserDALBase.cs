@@ -96,15 +96,15 @@ namespace ECommerce.DAL.SEC_User
 				return null;
 			}
 		}
-		#endregion
+        #endregion
 
-		#region Method: SEC_User_SelectByPK
-		public DataTable SEC_User_SelectByPK(int UserID)
+        #region Method: SEC_UserDetails_SelectByPK
+        public DataTable SEC_UserDetails_SelectByPK(int UserID)
 		{
 			try
 			{
 				SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
-				DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("SEC_User_SelectByPK");
+				DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("SEC_UserDetails_SelectByPK");
 				sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
 				DataTable dataTable = new DataTable();
 				using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
@@ -118,6 +118,28 @@ namespace ECommerce.DAL.SEC_User
 				return null;
 			}
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Method: SEC_UserOrderDetails_SelectByPK
+        public DataTable SEC_UserOrderDetails_SelectByPK(int UserID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("SEC_UserOrderDetails_SelectByPK");
+                sqlDatabase.AddInParameter(dbCommand, "@UserID", DbType.Int32, UserID);
+                DataTable dataTable = new DataTable();
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                {
+                    dataTable.Load(dataReader);
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
+    }
 }

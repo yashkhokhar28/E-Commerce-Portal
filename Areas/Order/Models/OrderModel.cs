@@ -17,6 +17,21 @@
         public DateTime? Created { get; set; }
 
         public DateTime? Modified { get; set; }
+    }
+
+    public class ExportExcelOrderModel
+    {
+        public int OrderID { get; set; }
+
+        public string? OrderStatus { get; set; }
+
+        public double? Price { get; set; }
+
+        public string? FirstName { get; set; }
+
+        public DateTime? Created { get; set; }
+
+        public DateTime? Modified { get; set; }
 
 
     }

@@ -1,5 +1,6 @@
 ﻿using ECommerce.Areas.SEC_User.Models;
 using ECommerce.DAL.SEC_User;
+using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
@@ -141,8 +142,14 @@ namespace ECommerce.Areas.SEC_User.Controllers
         #region User SelectByPK
         public IActionResult SEC_User_SelectByPK(int UserID)
         {
-            DataTable dataTable = sEC_UserDAL.SEC_User_SelectByPK(UserID);
-            return View("SingleUser", dataTable);
+            DataTable dataTableUserDetails = sEC_UserDAL.SEC_UserDetails_SelectByPK(UserID);
+            DataTable dataTableUserOrderDetails = sEC_UserDAL.SEC_UserOrderDetails_SelectByPK(UserID);
+            ViewModel viewModel = new ViewModel()
+            {
+                UserDetails = dataTableUserDetails,
+                UserOrderDetails = dataTableUserOrderDetails
+            };
+            return View("SingleUser", viewModel);
         }
         #endregion
     }

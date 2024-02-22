@@ -1,10 +1,6 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data.Common;
 using System.Data;
-using ECommerce.Areas.Cart.Models;
-using ECommerce.BAL;
-using ECommerce.Areas.Category.Models;
-using Microsoft.CodeAnalysis;
 
 namespace ECommerce.DAL.Cart
 {

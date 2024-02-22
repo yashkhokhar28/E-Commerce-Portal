@@ -4,7 +4,7 @@
 }
 
 @using System.Data
-@model DataTable
+@model ECommerce.Models.ViewModel
 
 <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
     <!--begin::Page-->
@@ -72,10 +72,10 @@
                                                 </div>
                                                 <!--end::Avatar-->
                                                 <!--begin::Name-->
-                                                <a class="fs-3 text-gray-800 text-hover-primary fw-bold mb-1">@Model.Rows[0]["FirstName"] @Model.Rows[0]["LastName"]</a>
+                                                <a class="fs-3 text-gray-800 text-hover-primary fw-bold mb-1">@Model.UserDetails.Rows[0]["FirstName"] @Model.UserDetails.Rows[0]["LastName"]</a>
                                                 <!--end::Name-->
                                                 <!--begin::Email-->
-                                                <a class="fs-5 fw-semibold text-muted text-hover-primary mb-6">@Model.Rows[0]["EmailAddress"]</a>
+                                                <a class="fs-5 fw-semibold text-muted text-hover-primary mb-6">@Model.UserDetails.Rows[0]["EmailAddress"]</a>
                                                 <!--end::Email-->
                                             </div>
                                             <!--end::Summary-->
@@ -90,14 +90,9 @@
                                             <div class="separator separator-dashed my-3"></div>
                                             <!--begin::Details content-->
                                             <div class="pb-5 fs-6">
-                                                <!--begin::Details item-->
-                                                <div class="fw-bold mt-5">Account ID</div>
-                                                <div class="text-gray-600">ID-@Model.Rows[0]["OrderID"]</div>
-                                                <!--begin::Details item-->
-                                                <!--begin::Details item-->
                                                 <div class="fw-bold mt-5">Billing Email</div>
                                                 <div class="text-gray-600">
-                                                    <a href="#" class="text-gray-600 text-hover-primary">@Model.Rows[0]["EmailAddress"]</a>
+                                                    <a href="#" class="text-gray-600 text-hover-primary">@Model.UserDetails.Rows[0]["EmailAddress"]</a>
                                                 </div>
                                                 <!--begin::Details item-->
                                                 <!--begin::Details item-->
@@ -109,13 +104,6 @@
                                                 <!--begin::Details item-->
                                                 <div class="fw-bold mt-5">Language</div>
                                                 <div class="text-gray-600">English</div>
-                                                <!--begin::Details item-->
-                                                <!--begin::Details item-->
-                                                <div class="fw-bold mt-5">Latest Transaction</div>
-                                                <div class="text-gray-600">
-                                                    <a class="text-gray-600 text-hover-primary">#@Model.Rows[0]["OrderID"]</a>
-                                                </div>
-                                                <!--begin::Details item-->
                                             </div>
                                             <!--end::Details content-->
                                         </div>
@@ -124,78 +112,83 @@
                                     <!--end::Card-->
                                 </div>
                                 <!--end::Sidebar-->
-                                <!--begin::Content-->
-                                <div class="flex-lg-row-fluid ms-lg-15">
-                                    <!--begin:::Tabs-->
-                                    <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
-                                        <!--begin:::Tab item-->
-                                        <li class="nav-item">
-                                            <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_customer_overview">Overview</a>
-                                        </li>
-                                        <!--end:::Tab item-->
-                                    </ul>
-                                    <!--end:::Tabs-->
-                                    <!--begin:::Tab content-->
-                                    <div class="tab-content" id="myTabContent">
-                                        <!--begin:::Tab pane-->
-                                        <div class="tab-pane fade show active" id="kt_ecommerce_customer_overview" role="tabpanel">
-                                            <!--begin::Card-->
-                                            <div class="card pt-4 mb-6 mb-xl-9">
-                                                <!--begin::Card header-->
-                                                <div class="card-header border-0">
-                                                    <!--begin::Card title-->
-                                                    <div class="card-title">
-                                                        <h2>Transaction History</h2>
+                                @if (Model.UserOrderDetails != null)
+                                {
+                                    <!--begin::Content-->
+                                    <div class="flex-lg-row-fluid ms-lg-15">
+                                        <!--begin:::Tabs-->
+                                        <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
+                                            <!--begin:::Tab item-->
+                                            <li class="nav-item">
+                                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_customer_overview">Overview</a>
+                                            </li>
+                                            <!--end:::Tab item-->
+                                        </ul>
+                                        <!--end:::Tabs-->
+                                        <!--begin:::Tab content-->
+                                        <div class="tab-content" id="myTabContent">
+                                            <!--begin:::Tab pane-->
+                                            <div class="tab-pane fade show active" id="kt_ecommerce_customer_overview" role="tabpanel">
+                                                <!--begin::Card-->
+                                                <div class="card pt-4 mb-6 mb-xl-9">
+                                                    <!--begin::Card header-->
+                                                    <div class="card-header border-0">
+                                                        <!--begin::Card title-->
+                                                        <div class="card-title">
+                                                            <h2>Transaction History</h2>
+                                                        </div>
+                                                        <!--end::Card title-->
                                                     </div>
-                                                    <!--end::Card title-->
-                                                </div>
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div class="card-body pt-0 pb-5">
-                                                    <!--begin::Table-->
-                                                    <table class="table align-middle table-row-dashed gy-5" id="kt_table_customers_payment">
-                                                        <thead class="border-bottom border-gray-200 fs-7 fw-bold">
-                                                            <tr class="text-start text-muted text-uppercase gs-0">
-                                                                <th class="min-w-100px">order No.</th>
-                                                                <th>Status</th>
-                                                                <th>Amount</th>
-                                                                <th class="min-w-100px">Date</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="fs-6 fw-semibold text-gray-600">
-                                                            @foreach (DataRow dataRow in Model.Rows)
-                                                            {
-                                                                <tr>
-                                                                    <td>
-                                                                        <a class="text-gray-600 text-hover-primary mb-1">#@dataRow["OrderID"]</a>
-                                                                    </td>
-                                                                    <td>
-                                                                        @if (dataRow["OrderStatus"] != null)
-                                                                        {
-                                                                            <span class="badge @(dataRow["OrderStatus"].ToString() == "Pending" ? "badge-light-warning" : "badge-light-success")">@dataRow["OrderStatus"]</span>
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            <span class="badge badge-light-info">N/A</span>
-                                                                        }
-                                                                    </td>
-                                                                    <td>@dataRow["Price"]</td>
-                                                                    <td>@dataRow["Created"]</td>
+                                                    <!--end::Card header-->
+                                                    <!--begin::Card body-->
+                                                    <div class="card-body pt-0 pb-5">
+                                                        <!--begin::Table-->
+                                                        <table class="table align-middle table-row-dashed gy-5" id="kt_table_customers_payment">
+                                                            <thead class="border-bottom border-gray-200 fs-7 fw-bold">
+                                                                <tr class="text-start text-muted text-uppercase gs-0">
+                                                                    <th class="min-w-100px">order No.</th>
+                                                                    <th>Status</th>
+                                                                    <th>Amount</th>
+                                                                    <th class="min-w-100px">Date</th>
                                                                 </tr>
-                                                            }
-                                                        </tbody>
-                                                    </table>
-                                                    <!--end::Table-->
+                                                            </thead>
+                                                            <tbody class="fs-6 fw-semibold text-gray-600">
+                                                                @foreach (DataRow dataRow in Model.UserOrderDetails.Rows)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a class="text-gray-600 text-hover-primary mb-1">#@dataRow["OrderID"]</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            @if (dataRow["OrderStatus"] != null)
+                                                                            {
+                                                                                <span class="badge @(dataRow["OrderStatus"].ToString() == "Pending" ? "badge-light-warning" : "badge-light-success")">@dataRow["OrderStatus"]</span>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <span class="badge badge-light-info">N/A</span>
+                                                                            }
+                                                                        </td>
+                                                                        <td>@dataRow["Price"]</td>
+                                                                        <td>@dataRow["Created"]</td>
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                        <!--end::Table-->
+                                                    </div>
+                                                    <!--end::Card body-->
                                                 </div>
-                                                <!--end::Card body-->
+                                                <!--end::Card-->
                                             </div>
-                                            <!--end::Card-->
+                                            <!--end:::Tab pane-->
                                         </div>
-                                        <!--end:::Tab pane-->
+                                        <!--end:::Tab content-->
                                     </div>
-                                    <!--end:::Tab content-->
-                                </div>
-                                <!--end::Content-->
+                                    <!--end::Content-->
+                                }
+
+
                             </div>
                             <!--end::Layout-->
                         </div>

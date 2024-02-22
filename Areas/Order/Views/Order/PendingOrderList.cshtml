@@ -81,9 +81,25 @@
                                     </div>
                                     <!--end::Card title-->
                                     <!--begin::Card toolbar-->
-                                    <div class="card-toolbar">
+                                    <div class="card-toolbar row">
+                                        <!--begin::Export dropdown-->
+                                        <div class="col-auto">
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-light-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="ki-duotone ki-exit-up fs-2"></i> Export Report
+                                                </button>
+                                                <!--begin::Menu-->
+                                                <ul class="dropdown-menu">
+                                                    <li><a asp-area="Order" asp-controller="Order" asp-action="ExportToExcel" class="dropdown-item">Export as Excel</a></li>
+                                                </ul>
+                                                <!--end::Menu-->
+                                            </div>
+                                        </div>
+                                        <!--end::Export dropdown-->
                                         <!--begin::Back Button-->
-                                        <a asp-area="SEC_Admin" asp-controller="SEC_Admin" asp-action="SEC_AdminDashboard" class="btn btn-secondary">Back</a>
+                                        <div class="col-auto">
+                                            <a asp-area="SEC_Admin" asp-controller="SEC_Admin" asp-action="SEC_AdminDashboard" class="btn btn-secondary">Back</a>
+                                        </div>
                                         <!--end::Back Button-->
                                     </div>
                                     <!--end::Card toolbar-->
