@@ -2,6 +2,7 @@
 using ECommerce.DAL.Category;
 using ECommerce.DAL.Product;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using System.Data;
 
 namespace ECommerce.Areas.Product.Controllers
@@ -113,19 +114,28 @@ namespace ECommerce.Areas.Product.Controllers
         #endregion
 
         #region Multiple Product Delete 
-        public IActionResult DeleteMultipleProducts(int[] ProductIDs)
+        public ActionResult DeleteMultipleProducts(int[] id)
         {
-            Console.WriteLine(ProductIDs[0]);
-            bool isSuccess = productDAL.DeleteMultipleProducts(ProductIDs);
-            if (isSuccess)
+            foreach (var item in id)
             {
-                TempData["Delete"] = "Selected Product Deleted Successfully";
-                return RedirectToAction("ProductList");
+                try
+                {
+                    try
+                    {
+                        ProductDelete(item);
+                        Console.WriteLine("Deleted " + item);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            else
-            {
-                return RedirectToAction("ProductList");
-            }
+            return RedirectToAction("ProductList");
         }
         #endregion
 

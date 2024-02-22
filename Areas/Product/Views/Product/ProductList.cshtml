@@ -120,7 +120,7 @@
                                         <a asp-area="SEC_Admin" asp-controller="SEC_Admin" asp-action="SEC_AdminDashboard" class="btn btn-secondary">Back</a>
                                         <!--end::Back Button-->
                                         <!--begin::Back Button-->
-                                        <a class="btn btn-danger m-2" id="deleteBtn" asp-area="Product" asp-controller="Product" asp-action="DeleteMultipleProducts">Delete</a>
+                                        <a class="btn btn-danger m-2" id="deleteSelectedBtn" asp-area="Product" asp-controller="Product" asp-action="DeleteMultipleProducts">Delete</a>
                                         <!--end::Back Button-->
                                     </div>
                                     <!--end::Card toolbar-->
@@ -151,7 +151,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" type="checkbox" data-product-id="@dataRow["ProductID"]" />
+                                                            <input class="form-check-input chkDelete" name="chkDeleteName" type="checkbox" value="@dataRow["ProductID"]" />
                                                         </div>
                                                     </td>
                                                     <td>
@@ -231,40 +231,39 @@
 {
     <script>
         $(document).ready(function () {
-            var selectedProductIds = [];
+            console.log("Hello");
+            $("#deleteSelectedBtn").on("click", function (e) {
+                var confirmation = confirm("Are you sure?")
+                if (confirmation) {
 
-            // "Select All" checkbox change event
-            $("#selectAll").on("change", function () {
-                var isChecked = $(this).prop("checked");
-                $(".form-check-input").prop("checked", isChecked);
-                updateSelectedProductIds(); // Update the selected product IDs
+                    e.preventDefault();
+                    var data = [];
+                    $("input[name='chkDeleteName']:checked").each(function () {
+                        data.push($(this).val());
+                    });
+                    console.log(data)
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DeleteMultipleProducts")",
+                        data: { id: data },
+                        traditional: true,
+                        success: function (result) {
+                            //alert("done");
+                            alert("Delete Success")
+                            location.reload();
+                        }
+                    })
+                }
+                else
+                    alert("Delete Canceled")
+            })
+        })
+        // Search functionality
+        $("#sample_1").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#sample_2 tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-
-            // Individual checkbox change event
-            $(".form-check-input").on("change", function () {
-                updateSelectedProductIds(); // Update the selected product IDs
-            });
-
-            // Update the array of selected product IDs
-            function updateSelectedProductIds() {
-                selectedProductIds = [];
-                $(".form-check-input:checked").each(function () {
-                    var productId = $(this).data("product-id");
-                    if (productId !== undefined) {
-                        selectedProductIds.push(productId);
-                    }
-                });
-                console.log("Selected Product IDs: ", selectedProductIds);
-            }
-
-            // Search functionality
-            $("#sample_1").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#sample_2 tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-            $("#selectedProductIds").val(selectedProductIds.join(","));
         });
     </script>
 }
