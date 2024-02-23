@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "User List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using System.Data
+@model ECommerce.Models.ViewModel
+
+<figure class="text-center m-4">
+    <blockquote class="blockquote">
+        <p>My Orders</p>
+    </blockquote>
+</figure>
+<div class="p-4">
+    <input type="text" class="form-control" placeholder="Search Order" id="sample_1" />
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-center min-w-100px">Order</th>
+            <th class="text-center min-w-100px">Quantity</th>
+            <th class="text-center min-w-100px">Status</th>
+            <th class="text-center min-w-100px">Total</th>
+            <th class="text-center min-w-100px">Order Date</th>
+        </tr>
+    </thead>
+    <tbody id="sample_2">
+        @foreach (DataRow dataRow in Model.UserOrderDetails.Rows)
+        {
+            <tr>
+                <td data-kt-ecommerce-order-filter="order_id" class="text-center">
+                    <a class="text-gray-800 text-hover-primary fw-bold">@dataRow["ProductName"]</a>
+                </td>
+                <td data-kt-ecommerce-order-filter="order_id" class="text-center">
+                    <a class="text-gray-800 text-hover-primary fw-bold">@dataRow["Quantity"]</a>
+                </td>
+                <td class="text-center pe-0" data-order="Failed">
+                    <!--begin::Badges-->
+                    @if (dataRow["OrderStatus"] != null)
+                    {
+                        <span class="badge @(dataRow["OrderStatus"].ToString() == "Pending" ? "badge-light-warning" : "badge-light-success")">@dataRow["OrderStatus"]</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-light-info">N/A</span>
+                    }
+                    <!--end::Badges-->
+                </td>
+                <td class="text-center pe-0">
+                    <span class="fw-bold">@dataRow["Price"]</span>
+                </td>
+                <td class="text-center" data-order="2023-10-27">
+                    <span class="fw-bold">@Convert.ToDateTime(dataRow["Created"]).ToString("dd-MM-yyyy")</span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#sample_1").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#sample_2 tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}
