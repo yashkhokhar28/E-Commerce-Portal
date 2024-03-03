@@ -154,8 +154,8 @@ namespace ECommerce.Areas.SEC_User.Controllers
         }
         #endregion
 
-        [CheckAccess]
         #region User SelectByPK (User Side)
+        [CheckAccess]
         public IActionResult SEC_UserProfile_SelectByPK(int UserID)
         {
             DataTable dataTableUserDetails = sEC_UserDAL.SEC_UserDetails_SelectByPK(UserID);
