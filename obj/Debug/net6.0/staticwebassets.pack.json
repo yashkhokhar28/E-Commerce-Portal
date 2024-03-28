@@ -11585,6 +11585,10 @@
       "PackagePath": "staticwebassets\\assets2\\media\\logos\\default-small.svg"
     },
     {
+      "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\assets2\\media\\logos\\default.png",
+      "PackagePath": "staticwebassets\\assets2\\media\\logos\\default.png"
+    },
+    {
       "Id": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\wwwroot\\assets2\\media\\logos\\default.svg",
       "PackagePath": "staticwebassets\\assets2\\media\\logos\\default.svg"
     },
