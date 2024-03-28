@@ -1,4 +1,5 @@
 ﻿using ECommerce.Areas.Address.Models;
+using ECommerce.Areas.Cart.Models;
 using ECommerce.Areas.Order.Models;
 using ECommerce.BAL;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
@@ -93,7 +94,7 @@ namespace ECommerce.DAL.Order
         #endregion
 
         #region Method : Order Insert
-        public bool OrderInsert(int UserID, int[] ProductIDs, int AddressID)
+        public bool OrderInsert(int UserID, int[] ProductIDs, int[] Quantities, int AddressID, CartModel cartModel)
         {
             SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
             try
@@ -110,8 +111,19 @@ namespace ECommerce.DAL.Order
                 // Convert DataTable to a comma-separated string of ProductIDs
                 string productIdsString = string.Join(",", productIdsTable.AsEnumerable().Select(row => row.Field<int>("ProductID")));
 
+                DataTable quantitiesTable = new DataTable();
+                quantitiesTable.Columns.Add("Quantity", typeof(int));
+                foreach (var quantity in Quantities)
+                {
+                    quantitiesTable.Rows.Add(quantity);
+                }
+                // Convert DataTable to a comma-separated string of ProductIDs
+                string quantitiesString = string.Join(",", quantitiesTable.AsEnumerable().Select(row => row.Field<int>("Quantity")));
+
+
                 // Pass the string as a parameter
                 sqlDatabase.AddInParameter(dbCommand, "@ProductIDs", DbType.String, productIdsString);
+                sqlDatabase.AddInParameter(dbCommand, "@Quantities", DbType.String, quantitiesString);
                 sqlDatabase.AddInParameter(dbCommand, "@isCompleted", DbType.Boolean, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@OrderStatus", DbType.String, DBNull.Value);
                 sqlDatabase.AddInParameter(dbCommand, "@Created", DbType.DateTime, DBNull.Value);

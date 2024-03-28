@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using ECommerce.Areas.Cart.Models;
 using ECommerce.Areas.Order.Models;
 using ECommerce.BAL;
 using ECommerce.DAL.Cart;
@@ -54,11 +55,11 @@ namespace ECommerce.Areas.Order.Controllers
         #endregion
 
         #region Order Insert
-        public IActionResult Order_Insert(int UserID, int[] ProductIDs, int AddressID)
+        public IActionResult Order_Insert(int UserID, int AddressID, int[] ProductIDs, int[] Quantities, CartModel cartModel)
         {
             if (ModelState.IsValid)
             {
-                if (orderDAL.OrderInsert(UserID, ProductIDs, AddressID))
+                if (orderDAL.OrderInsert(UserID, ProductIDs, Quantities, AddressID, cartModel))
                 {
                     bool isSuccess = cartDAL.Update_Order_Status(Convert.ToInt32(CommenVariable.UserID()));
                     if (isSuccess)
@@ -86,6 +87,7 @@ namespace ECommerce.Areas.Order.Controllers
             }
             return RedirectToAction("ThankYou", "Home");
         }
+
         #endregion
 
         #region GetOrderListForExcel

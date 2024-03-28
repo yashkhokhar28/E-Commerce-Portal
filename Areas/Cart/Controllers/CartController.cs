@@ -27,7 +27,6 @@ namespace ECommerce.Areas.Cart.Controllers
         #region Cart Insert
         public IActionResult CartInsert(int ProductID, int UserID)
         {
-
             if (ModelState.IsValid)
             {
                 if (cartDAL.CartInsert(ProductID, UserID))

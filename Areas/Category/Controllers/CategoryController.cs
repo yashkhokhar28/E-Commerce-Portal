@@ -12,6 +12,7 @@ namespace ECommerce.Areas.Category.Controllers
     {
         CategoryDAL categoryDAL = new CategoryDAL();
         ProductDAL productDAL = new ProductDAL();
+
         #region Category List
         public IActionResult CategoryList()
         {

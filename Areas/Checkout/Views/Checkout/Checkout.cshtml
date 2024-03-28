@@ -59,6 +59,7 @@
                             @foreach (DataRow dataRow in Model.CartTable.Rows)
                             {
                                 <input type="hidden" name="productids[]" value="@dataRow["ProductID"]" />
+                                <input type="hidden" name="quantities[]" value="@Convert.ToDouble(dataRow["Quantity"])" />
                             }
 
                             <div class="form-group">
@@ -67,6 +68,7 @@
                                 </button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
