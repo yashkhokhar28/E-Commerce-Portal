@@ -1,9 +1,7 @@
 ﻿using ECommerce.BAL;
 using ECommerce.DAL.Cart;
 using ECommerce.Models;
-using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
 using System.Data;
 using System.Diagnostics;
 

@@ -181,7 +181,7 @@
                                                             <!--end::Menu item-->
                                                             <!--begin::Menu item-->
                                                             <div class="menu-item px-3">
-                                                                <a class="menu-link px-3" asp-area="Order" asp-controller="Order" asp-action="OrderComplete" asp-route-orderid="@Convert.ToInt32(dataRow["OrderID"])">Complete</a>
+                                                                <a class="menu-link px-3" asp-area="Order" asp-controller="Order" asp-action="OrderComplete" asp-route-orderid="@Convert.ToInt32(dataRow["OrderID"])" asp-route-email="@dataRow["EmailAddress"].ToString()">Complete</a>
                                                             </div>
                                                             <!--end::Menu item-->
                                                         </div>

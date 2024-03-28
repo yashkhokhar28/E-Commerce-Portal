@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using CarChoice.BAL;
+using ClosedXML.Excel;
 using ECommerce.Areas.Cart.Models;
 using ECommerce.Areas.Order.Models;
 using ECommerce.BAL;
@@ -13,6 +14,17 @@ namespace ECommerce.Areas.Order.Controllers
     [Route("Order/[controller]/[action]")]
     public class OrderController : Controller
     {
+        private readonly IConfiguration Configuration;
+        private readonly IEmailSender _emailSender;
+
+        #region constructor
+        public OrderController(IConfiguration _Configuration, IEmailSender emailSender)
+        {
+            Configuration = _Configuration;
+            _emailSender = emailSender;
+        }
+        #endregion
+
         OrderDAL orderDAL = new OrderDAL();
         CartDAL cartDAL = new CartDAL();
 
@@ -42,12 +54,20 @@ namespace ECommerce.Areas.Order.Controllers
         #endregion
 
         #region Order Complete
-        public IActionResult OrderComplete(int OrderID)
+        public IActionResult OrderComplete(int OrderID, string Email)
         {
             bool isSuccess = orderDAL.OrderComplete(OrderID);
             if (isSuccess)
             {
-                TempData["Complete"] = "Order Completed Successfully";
+                bool isMailSend = SendEmail(Email);
+                if (isMailSend)
+                {
+                    TempData["Complete"] = "Order Completed Successfully, Check Your Mail";
+                }
+                else
+                {
+                    TempData["Complete"] = "Order Completed Successfully";
+                }
                 return RedirectToAction("PendingOrderList");
             }
             return RedirectToAction("PendingOrderList");
@@ -139,6 +159,25 @@ namespace ECommerce.Areas.Order.Controllers
                     return File(content, contentType, fileName);
                 }
             }
+        }
+        #endregion
+
+        #region Send Mail
+        [HttpPost]
+        public bool SendEmail(string receiver)
+        {
+            var providerEmail = receiver;
+
+            if (!string.IsNullOrEmpty(providerEmail))
+            {
+                var subject = "Order Confirmed";
+                var body = $"Your Order Confirmed";
+
+                // Send the email
+                _emailSender.SendEmailAsync(providerEmail, subject, body);
+                return true;
+            }
+            return false;
         }
         #endregion
     }

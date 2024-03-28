@@ -1,3 +1,5 @@
+using CarChoice.BAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -9,8 +11,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
-var app = builder.Build();
 
+builder.Services.AddSingleton<IEmailSender>(new EmailSender("smtp.gmail.com", 587, "yashkhokhar28@gmail.com", "nlwqoagupkscspjj"));
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
