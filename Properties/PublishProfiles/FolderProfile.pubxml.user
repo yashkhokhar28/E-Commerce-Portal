@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\ASP.NET\ECommerce Deploy</_PublishTargetUrl>
-    <History>True|2024-03-28T06:19:55.0169982Z;</History>
+    <History>True|2024-04-21T03:50:56.6477917Z;True|2024-03-28T11:49:55.0169982+05:30;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
