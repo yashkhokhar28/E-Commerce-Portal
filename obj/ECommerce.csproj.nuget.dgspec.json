@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj": {}
+    "/Users/yashkhokhar/RiderProjects/E-Commerce-Portal/ECommerce.csproj": {}
   },
   "projects": {
-    "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj": {
+    "/Users/yashkhokhar/RiderProjects/E-Commerce-Portal/ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj",
+        "projectUniqueName": "/Users/yashkhokhar/RiderProjects/E-Commerce-Portal/ECommerce.csproj",
         "projectName": "ECommerce",
-        "projectPath": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\ECommerce.csproj",
-        "packagesPath": "C:\\Users\\yashk\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP.NET\\Projects\\ECommerce\\E-Commerce-Portal\\obj\\",
+        "projectPath": "/Users/yashkhokhar/RiderProjects/E-Commerce-Portal/ECommerce.csproj",
+        "packagesPath": "/Users/yashkhokhar/.nuget/packages/",
+        "outputPath": "/Users/yashkhokhar/RiderProjects/E-Commerce-Portal/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yashk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/yashkhokhar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -34,20 +32,15 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "ClosedXML": {
               "target": "Package",
-              "version": "[0.102.2, )"
+              "version": "[0.104.0-preview2, )"
             },
             "EnterpriseLibrary.Data.NetCore": {
               "target": "Package",
@@ -55,11 +48,11 @@
             },
             "MailKit": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.6.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[9.0.0-preview.4.24271.3, )"
             }
           },
           "imports": [
@@ -81,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/yashkhokhar/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
